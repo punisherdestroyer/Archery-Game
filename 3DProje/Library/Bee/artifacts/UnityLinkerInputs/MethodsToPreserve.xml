@@ -1,0 +1,81 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="AbilityManager">
+			<method name="TryActivateAbility"/>
+			<method name="TryActivateAbility"/>
+			<method name="TryActivateAbility"/>
+			<method name="TryActivateAbility"/>
+			<method name="TryActivateAbility"/>
+		</type>
+		<type fullname="GameManager">
+			<method name="GoToMainMenu"/>
+			<method name="GoToMainMenu"/>
+			<method name="PauseGame"/>
+			<method name="RestartGame"/>
+			<method name="RestartGame"/>
+			<method name="ResumeGame"/>
+		</type>
+		<type fullname="LevelManager">
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+			<method name="ExecuteUpgradeByID"/>
+		</type>
+		<type fullname="MainMenuManager">
+			<method name="CloseAbilities"/>
+			<method name="CloseGeneralGame"/>
+			<method name="CloseHowToPlay"/>
+			<method name="CloseSettings"/>
+			<method name="OpenAbilities"/>
+			<method name="OpenGeneralGame"/>
+			<method name="OpenHowToPlay"/>
+			<method name="OpenSettings"/>
+			<method name="PlayButton"/>
+			<method name="SetVolume"/>
+		</type>
+		<type fullname="Player">
+			<method name="Dash"/>
+		</type>
+	</assembly>
+	<assembly fullname="Unity.RenderPipelines.Core.Runtime" ignoreIfMissing="1">
+		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerButton">
+			<method name="OnAction"/>
+		</type>
+		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerIntField">
+			<method name="OnDecrement"/>
+			<method name="OnDecrement"/>
+			<method name="OnIncrement"/>
+			<method name="OnIncrement"/>
+		</type>
+		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField">
+			<method name="OnDecrement"/>
+			<method name="OnIncrement"/>
+		</type>
+		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerPanel">
+			<method name="OnScrollbarClicked"/>
+			<method name="OnScrollbarClicked"/>
+			<method name="ResetDebugManager"/>
+		</type>
+		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerUIntField">
+			<method name="OnDecrement"/>
+			<method name="OnDecrement"/>
+			<method name="OnIncrement"/>
+			<method name="OnIncrement"/>
+		</type>
+	</assembly>
+</linker>
