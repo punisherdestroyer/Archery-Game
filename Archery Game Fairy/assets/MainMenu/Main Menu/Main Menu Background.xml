@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false" designImageAlpha="90" designImageForTest="true" bgColor="#4fa857" remark="&#xA;">
+  <controller name="Manager" exported="true" pages="0,Main Menu,1,Settings,2,How To Play,3,General,4,Details,5,Enemies,6,Stats,7,Abilities,8,Levels" selected="0"/>
+  <displayList>
+    <image id="n68_bzjs" name="Background" src="j2nb0" fileName="Cartoon_green_texture_grass.jpg" xy="0,0" size="1920,1080" pkg="b8s9nw97">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n0_j2nb" name="Main Menu Header" xy="635,56" size="653,129" group="n17_j2nb" font="ui://okk438l4w1g5ji" fontSize="100" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Archery Game">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <text id="n3_j2nb" name="Splash Text" xy="1020,120" size="450,150" group="n17_j2nb" skew="-10,-10" font="ui://okk438l4w1g5ji" fontSize="40" color="#ffff00" align="center" vAlign="middle" autoSize="none" text="Splash Text 0">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <component id="n12_j2nb" name="Play Button" src="bzjsj7" fileName="Main Menu/Play Button.xml" xy="749,600" size="400,100" group="n17_j2nb">
+      <gearDisplay controller="Manager" pages="0"/>
+      <Button title="Play" titleColor="#000000" titleFontSize="72" controller="Manager" page="0"/>
+    </component>
+    <component id="n14_j2nb" name="Settings Button" src="bzjsj8" fileName="Main Menu/Settings Button.xml" xy="199,600" size="400,100" group="n17_j2nb">
+      <gearDisplay controller="Manager" pages="0"/>
+      <Button title="Settings" titleColor="#000000" titleFontSize="72" controller="Manager" page="1"/>
+    </component>
+    <component id="n13_j2nb" name="How To Play Button" src="bzjsj5" fileName="Main Menu/How To Play Button.xml" xy="1299,600" size="400,100" group="n17_j2nb">
+      <gearDisplay controller="Manager" pages="0"/>
+      <Button title="How To Play" titleColor="#000000" titleFontSize="65" controller="Manager" page="2"/>
+    </component>
+    <text id="n15_j2nb" name="Version" xy="-1,0" size="192,86" group="n17_j2nb" font="ui://okk438l4w1g5ji" fontSize="50" color="#ffff00" align="center" vAlign="middle" autoSize="none" text="V1.3.0">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <text id="n16_j2nb" name="Author" xy="1689,1000" size="230,80" group="n17_j2nb" font="ui://okk438l4w1g5ji" fontSize="50" color="#ffff00" align="center" vAlign="middle" autoSize="none" text="By Nezu">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <group id="n17_j2nb" name="Main Menu" xy="-1,0" size="1920,1080" advanced="true">
+      <gearDisplay controller="Manager" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n18_j2nb" name="Settings Header" xy="650,50" size="600,100" group="n19_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Settings">
+      <gearDisplay controller="Manager" pages="1"/>
+    </text>
+    <component id="n21_j2nb" name="SBack Button" src="bzjsje" fileName="Main Menu/Settings/Back Button.xml" xy="15,15" size="400,100" group="n19_j2nb">
+      <gearDisplay controller="Manager" pages="1"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="0"/>
+    </component>
+    <component id="n22_j2nb" name="Voice Slider" src="bzjsjf" fileName="Main Menu/Settings/Voice Slider.xml" xy="511,464" size="180,10" group="n19_j2nb">
+      <gearDisplay controller="Manager" pages="1"/>
+      <Slider value="50" max="100"/>
+    </component>
+    <group id="n19_j2nb" name="Settings" xy="15,15" size="1235,459" advanced="true">
+      <gearDisplay controller="Manager" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n26_j2nb" name="How To Play Header" xy="650,50" size="600,100" group="n27_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="How To Play">
+      <gearDisplay controller="Manager" pages="2"/>
+    </text>
+    <component id="n23_j2nb" name="HTPBack Button" src="bzjsj9" fileName="Main Menu/How To Play/Back Button.xml" xy="15,15" size="400,100" group="n27_j2nb">
+      <gearDisplay controller="Manager" pages="2"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="0"/>
+    </component>
+    <component id="n25_j2nb" name="General Button" src="bzjsjb" fileName="Main Menu/How To Play/General Button.xml" xy="400,550" size="400,150" group="n27_j2nb">
+      <gearDisplay controller="Manager" pages="2"/>
+      <Button title="General" titleColor="#000000" titleFontSize="72" controller="Manager" page="3"/>
+    </component>
+    <component id="n24_j2nb" name="Details Button" src="bzjsja" fileName="Main Menu/How To Play/Details Button.xml" xy="1200,550" size="400,150" group="n27_j2nb">
+      <gearDisplay controller="Manager" pages="2"/>
+      <Button title="Details" titleColor="#000000" titleFontSize="72" controller="Manager" page="4"/>
+    </component>
+    <group id="n27_j2nb" name="How To Play" xy="15,15" size="1585,685" advanced="true">
+      <gearDisplay controller="Manager" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n29_j2nb" name="General Header" xy="650,50" size="600,100" group="n30_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="General">
+      <gearDisplay controller="Manager" pages="3"/>
+    </text>
+    <component id="n28_j2nb" name="GBack Button" src="bzjsjd" fileName="Main Menu/How To Play/General/Back Button.xml" xy="15,15" size="400,100" group="n30_j2nb">
+      <gearDisplay controller="Manager" pages="3"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <text id="n31_j2nb" name="General Text" xy="100,250" size="1720,830" group="n30_j2nb" font="ui://okk438l4w1g5ji" fontSize="55" color="#333333" align="center" vAlign="middle" autoSize="none" text="&quot;Archery Game&quot; is a Roguelite strategy game. Enemies spawn over time and try to kill you. You must avoid them and kill them, but your character can only attack while standing. The goal of the game is to survive as long as possible; the best score is recorded. You take damage if you collide with enemies. If you take enough damage, the game ends. The game gets progressively more difficult and different types of enemies appear. But don&apos;t worry, if you kill enough enemies, you can level up. So choosing upgrades wisely is crucial&#xA;Have fun!">
+      <gearDisplay controller="Manager" pages="3"/>
+    </text>
+    <group id="n30_j2nb" name="General" xy="15,15" size="1805,1065" advanced="true">
+      <gearDisplay controller="Manager" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n33_j2nb" name="Details Header" xy="650,50" size="600,100" group="n34_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Details">
+      <gearDisplay controller="Manager" pages="4"/>
+    </text>
+    <component id="n32_j2nb" name="DBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n35_j2nb" name="Enemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="Enemies" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n36_j2nb" name="Stats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="Stats" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n37_j2nb" name="Abilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="Abilities" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n38_j2nb" name="Levels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="Levels" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <group id="n34_j2nb" name="Details" xy="15,15" size="1860,285" advanced="true">
+      <gearDisplay controller="Manager" pages="4"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n40_j2nb" name="Enemies Header" xy="650,50" size="600,100" group="n46_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Enemies">
+      <gearDisplay controller="Manager" pages="5"/>
+    </text>
+    <component id="n41_j2nb" name="EDBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n42_j2nb" name="EEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5"/>
+      <Button title="Enemies" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n43_j2nb" name="EStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5"/>
+      <Button title="Stats" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n44_j2nb" name="EAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5"/>
+      <Button title="Abilities" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n45_j2nb" name="ELevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5"/>
+      <Button title="Levels" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <group id="n46_j2nb" name="Enemies" xy="15,15" size="1860,285" advanced="true">
+      <gearDisplay controller="Manager" pages="5"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n47_j2nb" name="Stats Header" xy="650,50" size="600,100" group="n53_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Stats">
+      <gearDisplay controller="Manager" pages="6"/>
+    </text>
+    <component id="n48_j2nb" name="SDBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n49_j2nb" name="SEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6"/>
+      <Button title="Enemies" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n50_j2nb" name="SStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6"/>
+      <Button title="Stats" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n51_j2nb" name="SAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6"/>
+      <Button title="Abilities" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n52_j2nb" name="SLevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6"/>
+      <Button title="Levels" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <group id="n53_j2nb" name="Stats" xy="15,15" size="1860,285" advanced="true">
+      <gearDisplay controller="Manager" pages="6"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n54_j2nb" name="Abilities Header" xy="650,50" size="600,100" group="n60_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Abilities&#xA;">
+      <gearDisplay controller="Manager" pages="7"/>
+    </text>
+    <component id="n55_j2nb" name="ADBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n56_j2nb" name="AEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7"/>
+      <Button title="Enemies" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n57_j2nb" name="AStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7"/>
+      <Button title="Stats" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n58_j2nb" name="AAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7"/>
+      <Button title="Abilities" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n59_j2nb" name="ALevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7"/>
+      <Button title="Levels" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <group id="n60_j2nb" name="Abilities" xy="15,15" size="1860,285" advanced="true">
+      <gearDisplay controller="Manager" pages="7"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n61_j2nb" name="Levels Header" xy="650,50" size="600,100" group="n67_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Levels">
+      <gearDisplay controller="Manager" pages="8"/>
+    </text>
+    <component id="n62_j2nb" name="LDBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8"/>
+      <Button title="Back" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n63_j2nb" name="LEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8"/>
+      <Button title="Enemies" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n64_j2nb" name="LStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8"/>
+      <Button title="Stats" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n65_j2nb" name="LAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8"/>
+      <Button title="Abilities" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n66_j2nb" name="LLevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8"/>
+      <Button title="Levels" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <group id="n67_j2nb" name="Levels" xy="15,15" size="1860,285" advanced="true">
+      <gearDisplay controller="Manager" pages="8"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+  </displayList>
+  <transition name="Splash" options="6" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Color" target="n0_j2nb" tween="true" startValue="#ffffff" endValue="#ffffff" duration="24"/>
+    <item time="0" type="Color" target="n3_j2nb" tween="true" startValue="#ffff33" endValue="#ffff33" duration="24"/>
+    <item time="0" type="Scale" target="n3_j2nb" tween="true" startValue="1,1" endValue="1.3,1.4" duration="24" repeat="-1" yoyo="true"/>
+    <item time="0" type="XY" target="n3_j2nb" tween="true" startValue="1020,120" endValue="960,95" duration="24" repeat="-1" yoyo="true"/>
+  </transition>
+</component>

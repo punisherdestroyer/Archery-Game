@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="50,10" extention="Slider">
+  <displayList>
+    <graph id="n0_j2nb" name="n0" xy="-25,0" size="800,80" type="rect" lineColor="#ff666666" fillColor="#ffcccccc">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_j2nb" name="bar" xy="-15,10" size="780,60" type="rect" lineSize="0" fillColor="#ffffffcc"/>
+    <text id="n2_j2nb" name="title" xy="-23,81" size="806,184" fontSize="144" align="center" autoSize="none" text="100%">
+      <relation target="" sidePair="width-width"/>
+    </text>
+    <component id="n3_j2nb" name="grip" src="bzjsjg" fileName="Main Menu/Settings/Voice Slider_grip.xml" xy="738,-4" size="46,86">
+      <relation target="n1_j2nb" sidePair="right-right"/>
+    </component>
+  </displayList>
+  <Slider/>
+</component>
