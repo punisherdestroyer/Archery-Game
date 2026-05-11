@@ -99,22 +99,22 @@ public class LevelManager : MonoBehaviour
         if (id == "HP") 
         {
             player.hpLevel++;
-            player.maxHealth += 35f;
+            player.maxHealth += 25f;
         }
         else if (id == "ATK") 
         {
             player.atkLevel++;
-            player.atkDamage += 7.5f;
+            player.atkDamage += 75f;
         }
         else if (id == "ASPD") 
         {
             player.atkSpeedLevel++;
-            player.attackSpeedMultiplier += 0.1f;
+            player.attackSpeedMultiplier += 0.2f;
         }
         else if (id == "SPD") 
         {
             player.moveSpeedLevel++;
-            player.moveSpeed += 2.25f;
+            player.moveSpeed += 2f;
         }
         else if (id == "B_CD") abM.burnCDLvl++;
         else if (id == "B_DUR") abM.burnDurLvl++;

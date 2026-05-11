@@ -84,7 +84,7 @@ public class AbilityManager : MonoBehaviour
         float cd = GetBaseCD(index) * Mathf.Pow(0.95f, GetCDLvl(index));
         lastFullCD[index] = cd;
         nextReadyTimes[index] = Time.time + cd;
-        float dur = GetBaseDur(index) * (1f + (GetDurLvl(index) * 0.2f));
+        float dur = GetBaseDur(index) * (1f + (GetDurLvl(index) * 0.25f));
         StartCoroutine(AbilityTimer(index, dur));
     }
 
@@ -110,17 +110,17 @@ public class AbilityManager : MonoBehaviour
         return CalculateRageEffect(isSpeedActive, baseMult, 1.2f);
     }
 
-    public float GetBurnDamage() => CalculateRageEffect(isBurnActive, 3f + (burnDmgLvl * 1f), 0f);
+    public float GetBurnDamage() => CalculateRageEffect(isBurnActive, 1.5f + (burnDmgLvl * 1f), 0f);
     public float GetBurnDuration() => (isBurnActive || isRageActive) ? 3f : 0f;
     public int GetBounceCount() => Mathf.FloorToInt(CalculateRageEffect(isRicoActive, 1f + ricoCountLvl, 0f));
     public float GetBounceLoss() => Mathf.Max(0f, 0.35f - (ricoCountLvl * 0.1f));
     public int GetArrowCount() => Mathf.FloorToInt(CalculateRageEffect(isMultiActive, 2f + multiShotCountLvl, 1f));
     public bool IsRageActive() => isRageActive;
-    public float GetRagePowerBuff() => 0.75f + (ragePowerLvl * 0.25f);
+    public float GetRagePowerBuff() => 0.75f + (ragePowerLvl * 0.2f);
     private float CalculateRageEffect(bool active, float activeVal, float inactiveVal)
     {
         if (active) return isRageActive ? activeVal + GetRagePowerBuff() : activeVal;
-        if (isRageActive) return activeVal * (0.75f + (ragePowerLvl * 0.1f));
+        if (isRageActive) return activeVal * (0.75f + (ragePowerLvl * 0.2f));
         return inactiveVal;
     }
     private float GetBaseCD(int i) => i==0?30f:i==1?35f:i==2?40f:i==3?45f:60f;

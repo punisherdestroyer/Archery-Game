@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
@@ -9,8 +8,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject elitePrefab;
     [SerializeField] private GameObject bossPrefab;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private TMP_Text timerText;
-    [SerializeField] private TMP_Text buffNotificationText;
 
     [Header("Spawn")]
     [SerializeField] private float minSpawnDistance = 15f;
@@ -34,7 +31,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        buffNotificationText.text = "";
         StartCoroutine(TimerTick());
         StartCoroutine(SpawnRoutine());
     }
@@ -47,7 +43,6 @@ public class EnemySpawner : MonoBehaviour
             if (GameManager.Instance.IsPaused) continue;
 
             elapsedTime++;
-            timerText.text = FormatTime(elapsedTime);
 
             if (elapsedTime > 0 && elapsedTime % 45 == 0)
             {
@@ -60,30 +55,22 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private string FormatTime(int seconds)
-    {
-        int m = seconds / 60;
-        int s = seconds % 60;
-        return string.Format("{0:00}:{1:00}", m, s);
-    }
-
     private void ApplyRandomEnemyBuff()
     {
         int rand = Random.Range(0, 3);
         string msg = "";
 
-        if (rand == 0) { enemyHpBuff += 0.25f; msg = "Enemies' Health Increased!"; }
-        else if (rand == 1) { enemyAtkBuff += 0.25f; msg = "Enemies' Damage Increased!"; }
-        else { enemySpdBuff += 0.25f; msg = "Enemies' Speed Increased!"; }
+        if (rand == 0) { enemyHpBuff += 0.25f; msg = "ENEMIES' HEALTH INCREASED!"; }
+        else if (rand == 1) { enemyAtkBuff += 0.25f; msg = "ENEMIES' DAMAGE INCREASED!"; }
+        else { enemySpdBuff += 0.25f; msg = "ENEMIES' SPEED INCREASED!"; }
 
         StartCoroutine(ShowBuffText(msg));
     }
 
     IEnumerator ShowBuffText(string message)
     {
-        buffNotificationText.text = message;
+        InGameUIController.Instance?.ShowNotification(message);
         yield return new WaitForSeconds(4f);
-        buffNotificationText.text = "";
     }
 
     IEnumerator SpawnRoutine()

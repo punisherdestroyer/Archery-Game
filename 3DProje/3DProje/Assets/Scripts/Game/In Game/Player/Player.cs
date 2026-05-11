@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
     {
         maxHealth = 100f + (hpLevel * 25f);
         atkDamage = 25f + (atkLevel * 5f);
-        attackSpeedMultiplier = 1f + (atkSpeedLevel * 0.25f);
+        attackSpeedMultiplier = 1f + (atkSpeedLevel * 0.2f);
         moveSpeed = 6f + (moveSpeedLevel * 2f);
         healthBar.UpdateHealth(currentHealth, maxHealth);
     }
@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
         dashCD = maxDashCD;
         
         float dashTime = 0.2f;
-        float dashPower = moveSpeed * 3f;
+        float dashPower = moveSpeed * 2f;
 
         while (dashTime > 0)
         {

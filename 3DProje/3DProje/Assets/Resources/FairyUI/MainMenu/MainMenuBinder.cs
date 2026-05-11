@@ -8,6 +8,8 @@ namespace MainMenu
     {
         public static void BindAll()
         {
+            UIObjectFactory.SetPackageItemExtension(UI_Next_Button.URL, typeof(UI_Next_Button));
+            UIObjectFactory.SetPackageItemExtension(UI_Previous_Button.URL, typeof(UI_Previous_Button));
             UIObjectFactory.SetPackageItemExtension(UI_How_To_Play_Button.URL, typeof(UI_How_To_Play_Button));
             UIObjectFactory.SetPackageItemExtension(UI_Main_Menu_Background.URL, typeof(UI_Main_Menu_Background));
             UIObjectFactory.SetPackageItemExtension(UI_Play_Button.URL, typeof(UI_Play_Button));

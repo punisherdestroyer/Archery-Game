@@ -43,17 +43,32 @@ public class Enemy : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
         direction.y = 0;
 
+        Collider[] neighbors = Physics.OverlapSphere(transform.position, 1.2f);
+        Vector3 separation = Vector3.zero;
+        foreach (var col in neighbors)
+        {
+            if (col.gameObject != gameObject && col.CompareTag("Enemy"))
+            {
+                Vector3 away = transform.position - col.transform.position;
+                away.y = 0;
+                if (away.sqrMagnitude > 0f)
+                    separation += away.normalized / away.magnitude;
+            }
+        }
+
+        Vector3 moveDir = (direction + separation * 0.3f).normalized;
+
         if (controller.isGrounded) verticalVelocity = -0.5f;
         else verticalVelocity += gravity * Time.deltaTime;
 
-        Vector3 move = direction * spd;
+        Vector3 move = moveDir * spd;
         move.y = verticalVelocity;
 
         controller.Move(move * Time.deltaTime);
 
-        if (direction != Vector3.zero)
+        if (moveDir != Vector3.zero)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 10f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), 10f * Time.deltaTime);
         }
     }
 

@@ -10,6 +10,8 @@ public class InGameUIController : MonoBehaviour
     private Controller _screenController;
     private GTextField _scoreText;
     private GTextField _bestScoreText;
+    private GTextField _gameBestScoreText;
+    private GTextField _gameScoreText;
     private GProgressBar _expBar;
     private GTextField _notificationText;
     private GButton[] _abilityButtons = new GButton[5];
@@ -67,25 +69,35 @@ public class InGameUIController : MonoBehaviour
             if (_screenController != null) _screenController.selectedIndex = 0;
             _scoreText = FindChildRecursive(_mainView, "IScore")?.asTextField;
             _bestScoreText = FindChildRecursive(_mainView, "IBest Score")?.asTextField;
+            _gameBestScoreText = FindChildRecursive(_mainView, "GBest Score")?.asTextField;
+            _gameScoreText = FindChildRecursive(_mainView, "GScore")?.asTextField;
             _expBar = FindChildRecursive(_mainView, "Level Bar")?.asProgress;
             _notificationText = FindChildRecursive(_mainView, "Notification")?.asTextField;
             if (_notificationText != null) _notificationText.visible = false;
 
             CacheAndResetUpgradeButtons();
 
-            _joystick = FindChildRecursive(_mainView, "Joystick")?.asCom;
+            _joystick = FindChildRecursive(_mainView, "joystick")?.asCom;
             if (_joystick != null)
             {
                 _joystick.touchable = true;
-                _joystickThumb = FindChildRecursive(_joystick, "Joystick Handle") ?? FindChildRecursive(_joystick, "thumb");
+                _joystickThumb = FindChildRecursive(_joystick, "thumb");
+                GObject center = FindChildRecursive(_joystick, "joystick_center");
                 if (_joystickThumb != null)
                 {
-                    _joystickStartPos = _joystickThumb.xy;
+                    _joystickThumb.pivotAsAnchor = true;
+                    _joystickThumb.SetPivot(0.5f, 0.5f);
+                    if (center != null)
+                        _joystickStartPos = new Vector2(center.x + center.width / 2, center.y + center.height / 2);
+                    else
+                        _joystickStartPos = new Vector2(_joystick.width / 2, _joystick.height / 2);
+                    _joystickThumb.SetXY(_joystickStartPos.x - _joystickThumb.width / 2, _joystickStartPos.y - _joystickThumb.height / 2);
                     _joystick.onTouchBegin.Add(OnJoystickTouchBegin);
                     _joystick.onTouchMove.Add(OnJoystickTouchMove);
                     _joystick.onTouchEnd.Add(OnJoystickTouchEnd);
                 }
             }
+
             for (int i = 0; i < 5; i++)
             {
                 _abilityButtons[i] = FindChildRecursive(_mainView, "Ability_" + i)?.asButton;
@@ -109,6 +121,7 @@ public class InGameUIController : MonoBehaviour
             FindChildRecursive(_mainView, "Resume Button")?.asButton?.onClick.Add(() => GameManager.Instance?.ResumeGame());
             FindChildRecursive(_mainView, "PMenu Button")?.asButton?.onClick.Add(() => GameManager.Instance?.GoToMainMenu());
             FindChildRecursive(_mainView, "Restart Button")?.asButton?.onClick.Add(() => GameManager.Instance?.RestartGame());
+            FindChildRecursive(_mainView, "GRestart Button")?.asButton?.onClick.Add(() => GameManager.Instance?.RestartGame());
             FindChildRecursive(_mainView, "GMenu Button")?.asButton?.onClick.Add(() => GameManager.Instance?.GoToMainMenu());
             FindChildRecursive(_mainView, "Skip Button")?.asButton?.onClick.Add(() => GameManager.Instance?.ResumeGame());
         }
@@ -130,27 +143,13 @@ public class InGameUIController : MonoBehaviour
                 btn.touchable = false;
                 int phIdx = i + 1;
                 GObject ph = FindChildRecursive(target, "Ability Placeholder " + phIdx);
-                if (ph != null)
-                {
-                    btn.xy = ph.xy;
-                    Debug.Log("[UpgradeCache] Button '" + id + "' cached and moved to Ability Placeholder " + phIdx);
-                }
-                else
-                {
-                    Debug.LogWarning("[UpgradeCache] Placeholder 'Ability Placeholder " + phIdx + "' not found for button '" + id + "'");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("[UpgradeCache] Button not found for ID: " + id);
+                if (ph != null) btn.xy = ph.xy;
             }
         }
-        Debug.Log("[UpgradeCache] Total buttons cached: " + _upgradeButtonCache.Count);
     }
 
     public void ShowUpgradeScreen()
     {
-        Debug.Log("[Upgrade] ShowUpgradeScreen called");
         ShowScreen(3);
         GComponent target = FindChildRecursive(_mainView, "Upgrade")?.asCom ?? _mainView;
         target.touchable = true;
@@ -182,7 +181,6 @@ public class InGameUIController : MonoBehaviour
             int r = UnityEngine.Random.Range(0, statList.Count);
             chosen[0] = statList[r];
             usedIDs.Add(chosen[0]);
-            Debug.Log("[Upgrade] CAbility 1 (stat only) selected: " + chosen[0]);
         }
 
         List<string> mixList = new List<string>();
@@ -195,7 +193,6 @@ public class InGameUIController : MonoBehaviour
             int r = UnityEngine.Random.Range(0, mixList.Count);
             chosen[1] = mixList[r];
             usedIDs.Add(chosen[1]);
-            Debug.Log("[Upgrade] CAbility 2 (mix) selected: " + chosen[1]);
         }
 
         List<string> abilityList = new List<string>();
@@ -208,7 +205,6 @@ public class InGameUIController : MonoBehaviour
             int r = UnityEngine.Random.Range(0, abilityList.Count);
             chosen[2] = abilityList[r];
             usedIDs.Add(chosen[2]);
-            Debug.Log("[Upgrade] CAbility 3 (ability only) selected: " + chosen[2]);
         }
 
         string[] cPlaceholderNames = { "CAbility Placeholder 1", "CAbility Placeholder 2", "CAbility Placeholder 3" };
@@ -225,11 +221,6 @@ public class InGameUIController : MonoBehaviour
                     btn.touchable = true;
                     string capturedID = chosen[i];
                     btn.onClick.Set(() => OnUpgradeSelected(capturedID));
-                    Debug.Log("[Upgrade] Button '" + chosen[i] + "' placed at " + cPlaceholderNames[i] + ", visible=true");
-                }
-                else
-                {
-                    Debug.LogWarning("[Upgrade] " + cPlaceholderNames[i] + " not found!");
                 }
             }
         }
@@ -237,41 +228,23 @@ public class InGameUIController : MonoBehaviour
 
     public void ShowUpgradeScreen(List<UpgradeOption> options, System.Action<string> onSelect)
     {
-        Debug.Log("[Upgrade] ShowUpgradeScreen (legacy) called with " + (options != null ? options.Count : 0) + " options");
         ShowUpgradeScreen();
     }
 
     private void OnUpgradeSelected(string id)
     {
-        Debug.Log("[Upgrade] OnUpgradeSelected: " + id);
-        if (LevelManager.Instance != null)
-        {
-            LevelManager.Instance.ExecuteUpgradeByID(id);
-            Debug.Log("[Upgrade] ExecuteUpgradeByID called for: " + id);
-        }
-        else
-        {
-            Debug.LogError("[Upgrade] LevelManager.Instance is null!");
-        }
+        if (LevelManager.Instance != null) LevelManager.Instance.ExecuteUpgradeByID(id);
 
         Controller managerI = _mainView.GetController("ManagerI");
-        if (managerI != null)
-        {
-            managerI.selectedIndex = 0;
-            Debug.Log("[Upgrade] ManagerI controller set to 0 (gameplay scene)");
-        }
-        else
-        {
-            Debug.LogError("[Upgrade] ManagerI controller not found!");
-        }
+        if (managerI != null) managerI.selectedIndex = 0;
 
         Time.timeScale = 1;
-        Debug.Log("[Upgrade] Time.timeScale set to 1");
     }
 
     private void OnJoystickTouchBegin(EventContext context)
     {
         context.CaptureTouch();
+        _joystickInput = Vector2.zero;
         UpdateJoystickInput(context);
     }
 
@@ -282,21 +255,30 @@ public class InGameUIController : MonoBehaviour
 
     private void OnJoystickTouchEnd(EventContext context)
     {
-        if (_joystickThumb != null) _joystickThumb.xy = _joystickStartPos;
         _joystickInput = Vector2.zero;
+        if (_joystickThumb != null)
+        {
+            _joystickThumb.SetXY(_joystickStartPos.x - _joystickThumb.width / 2, _joystickStartPos.y - _joystickThumb.height / 2);
+            _joystickThumb.rotation = 0f;
+        }
     }
 
     private void UpdateJoystickInput(EventContext context)
     {
         if (_joystick == null || _joystickThumb == null) return;
         Vector2 localPt = _joystick.GlobalToLocal(context.inputEvent.position);
-        Vector2 center = new Vector2(_joystick.width / 2, _joystick.height / 2);
-        Vector2 dist = localPt - center;
-        float maxDist = _joystick.width / 2;
-        _joystickInput = dist.normalized;
-        if (dist.magnitude <= maxDist) _joystickThumb.xy = localPt;
-        else _joystickThumb.xy = center + (_joystickInput * maxDist);
-        if (dist.magnitude < 2f) _joystickInput = Vector2.zero;
+        Vector2 center = _joystickStartPos;
+        Vector2 offset = localPt - center;
+        float maxDist = _joystick.width / 2f;
+        float rad = Mathf.Atan2(offset.y, offset.x);
+        _joystickThumb.rotation = rad * Mathf.Rad2Deg + 90f;
+        float dist = offset.magnitude;
+        Vector2 clamped = dist > maxDist ? offset.normalized * maxDist : offset;
+        _joystickThumb.SetXY(center.x + clamped.x - _joystickThumb.width / 2, center.y + clamped.y - _joystickThumb.height / 2);
+        if (dist < 5f)
+            _joystickInput = Vector2.zero;
+        else
+            _joystickInput = new Vector2(offset.x, -offset.y).normalized;
     }
 
     private GObject FindChildRecursive(GComponent parent, string partialName)
@@ -322,7 +304,9 @@ public class InGameUIController : MonoBehaviour
         if (GameManager.Instance == null) return;
 
         if (_scoreText != null) _scoreText.text = GameManager.Instance.GetCurrentTimeText();
-        if (_bestScoreText != null) _bestScoreText.text = "Best: " + GameManager.Instance.GetBestTimeText();
+        if (_bestScoreText != null) _bestScoreText.text = "BEST: " + GameManager.Instance.GetBestTimeText();
+        if (_gameBestScoreText != null) _gameBestScoreText.text = "BEST: " + GameManager.Instance.GetBestTimeText();
+        if (_gameScoreText != null) _gameScoreText.text = GameManager.Instance.GetCurrentTimeText();
 
         if (GameManager.Instance.IsGameOver || GameManager.Instance.IsPaused) return;
 
@@ -342,6 +326,23 @@ public class InGameUIController : MonoBehaviour
             }
             _dashButton.title = _player.GetDashCD() > 0 ? Mathf.CeilToInt(_player.GetDashCD()).ToString() : "";
         }
+
+        Vector2 kb = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (_joystickThumb != null && _joystickInput.sqrMagnitude < 0.001f)
+        {
+            if (kb.sqrMagnitude > 0.001f)
+            {
+                float rad = Mathf.Atan2(-kb.y, kb.x);
+                _joystickThumb.rotation = rad * Mathf.Rad2Deg + 90f;
+                float maxDist = _joystick.width / 2f;
+                _joystickThumb.SetXY(_joystickStartPos.x + kb.x * maxDist - _joystickThumb.width / 2, _joystickStartPos.y + (-kb.y) * maxDist - _joystickThumb.height / 2);
+            }
+            else
+            {
+                _joystickThumb.SetXY(_joystickStartPos.x - _joystickThumb.width / 2, _joystickStartPos.y - _joystickThumb.height / 2);
+                _joystickThumb.rotation = 0f;
+            }
+        }
     }
 
     public void ShowScreen(int index)
@@ -358,10 +359,14 @@ public class InGameUIController : MonoBehaviour
         {
             _notificationText.visible = true;
             _notificationText.text = message;
-            _mainView.GetTransition("ShowNotification")?.Play(() => {
-                _notificationText.visible = false;
-            });
+            StartCoroutine(HideNotificationAfterDelay(3f));
         }
+    }
+
+    private System.Collections.IEnumerator HideNotificationAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (_notificationText != null) _notificationText.visible = false;
     }
 
     public void UpdateExpBar(float current, float max)
@@ -409,10 +414,14 @@ public class InGameUIController : MonoBehaviour
     }
 
     private void TriggerDash() => _dashButton?.GetTransition("pressAnim")?.Play();
+
     public Vector2 GetJoystickAxis()
     {
         if (_joystickInput.sqrMagnitude > 0.001f) return _joystickInput;
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 kb = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (kb.sqrMagnitude > 0.001f) return kb.normalized;
+        return Vector2.zero;
     }
+
     void OnDestroy() => CleanUp();
 }

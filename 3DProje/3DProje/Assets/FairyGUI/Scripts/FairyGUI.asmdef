@@ -5,11 +5,8 @@
         "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
-    "excludePlatforms": [
-        "Android",
-        "WindowsStandalone64"
-    ],
-    "allowUnsafeCode": false,
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
