@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false" designImageAlpha="90" designImageForTest="true" bgColor="#4fa857" remark="&#xA;">
+  <controller name="Manager" exported="true" pages="0,Main Menu,1,Settings,2,How To Play,3,General,4,Details,5,Enemies0,9,Enemies1,11,Enemies2,6,Stats0,10,Stats1,12,Stats2,13,Stats3,7,Abilities0,14,Abilities1,15,Abilities2,16,Abilities3,17,Abilities4,18,Abilities5,8,Levels0,19,Levels1,20,Levels2" selected="0"/>
+  <displayList>
+    <image id="n68_bzjs" name="Background" src="j2nb0" fileName="Cartoon_green_texture_grass.jpg" pkg="b8s9nw97" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n0_j2nb" name="Main Menu Header" xy="544,68" size="825,129" group="n17_j2nb" font="ui://okk438l4w1g5ji" fontSize="100" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#ffff00" text="ARCHERY GAME">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <text id="n3_j2nb" name="Splash Text" xy="1020,120" size="450,150" group="n17_j2nb" skew="-10,-10" font="ui://okk438l4w1g5ji" fontSize="40" color="#ffff00" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" text="Splash Text 0">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <component id="n14_j2nb" name="Settings Button" src="bzjsj8" fileName="Main Menu/Settings Button.xml" xy="175,600" size="450,125" group="n17_j2nb">
+      <gearDisplay controller="Manager" pages="0"/>
+      <Button title="SETTINGS" titleColor="#000000" titleFontSize="60" controller="Manager" page="1"/>
+    </component>
+    <component id="n12_j2nb" name="Play Button" src="bzjsj7" fileName="Main Menu/Play Button.xml" xy="725,600" size="450,125" group="n17_j2nb">
+      <gearDisplay controller="Manager" pages="0"/>
+      <Button title="PLAY" titleColor="#000000" titleFontSize="60" controller="Manager" page="0"/>
+    </component>
+    <component id="n13_j2nb" name="How To Play Button" src="bzjsj5" fileName="Main Menu/How To Play Button.xml" xy="1275,600" size="450,125" group="n17_j2nb">
+      <gearDisplay controller="Manager" pages="0"/>
+      <Button title="HOW TO PLAY" titleColor="#000000" titleFontSize="60" controller="Manager" page="2"/>
+    </component>
+    <text id="n15_j2nb" name="Version" xy="-1,0" size="192,86" group="n17_j2nb" font="ui://okk438l4w1g5ji" fontSize="50" color="#ffff00" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="V1.5.2">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <text id="n16_j2nb" name="Author" xy="1689,1000" size="230,80" group="n17_j2nb" font="ui://okk438l4w1g5ji" fontSize="50" color="#ffff00" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="By Nezu">
+      <gearDisplay controller="Manager" pages="0"/>
+    </text>
+    <group id="n17_j2nb" name="Main Menu" xy="-1,0" size="1920,1080" advanced="true">
+      <gearDisplay controller="Manager" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n18_j2nb" name="Settings Header" xy="650,50" size="600,100" group="n19_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="SETTINGS">
+      <gearDisplay controller="Manager" pages="1"/>
+    </text>
+    <component id="n21_j2nb" name="SBack Button" src="bzjsje" fileName="Main Menu/Settings/Back Button.xml" xy="15,15" size="400,100" group="n19_j2nb">
+      <gearDisplay controller="Manager" pages="1"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="0"/>
+    </component>
+    <component id="n22_j2nb" name="Voice Slider" src="bzjsjf" fileName="Main Menu/Settings/Voice Slider.xml" xy="511,464" size="180,10" group="n19_j2nb">
+      <gearDisplay controller="Manager" pages="1"/>
+      <Slider value="50" max="100"/>
+    </component>
+    <group id="n19_j2nb" name="Settings" xy="15,15" size="1235,459" advanced="true">
+      <gearDisplay controller="Manager" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n26_j2nb" name="How To Play Header" xy="650,50" size="600,100" group="n27_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="HOW TO PLAY">
+      <gearDisplay controller="Manager" pages="2"/>
+    </text>
+    <component id="n23_j2nb" name="HTPBack Button" src="bzjsj9" fileName="Main Menu/How To Play/Back Button.xml" xy="15,15" size="400,100" group="n27_j2nb">
+      <gearDisplay controller="Manager" pages="2"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="0"/>
+    </component>
+    <component id="n25_j2nb" name="General Button" src="bzjsjb" fileName="Main Menu/How To Play/General Button.xml" xy="400,550" size="400,150" group="n27_j2nb">
+      <gearDisplay controller="Manager" pages="2"/>
+      <Button title="GENERAL" titleColor="#000000" titleFontSize="72" controller="Manager" page="3"/>
+    </component>
+    <component id="n24_j2nb" name="Details Button" src="bzjsja" fileName="Main Menu/How To Play/Details Button.xml" xy="1200,550" size="400,150" group="n27_j2nb">
+      <gearDisplay controller="Manager" pages="2"/>
+      <Button title="DETAILS" titleColor="#000000" titleFontSize="72" controller="Manager" page="4"/>
+    </component>
+    <group id="n27_j2nb" name="How To Play" xy="15,15" size="1585,685" advanced="true">
+      <gearDisplay controller="Manager" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n29_j2nb" name="General Header" xy="650,50" size="600,100" group="n30_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="GENERAL">
+      <gearDisplay controller="Manager" pages="3"/>
+    </text>
+    <text id="n31_j2nb" name="General Text" xy="100,250" size="1720,830" group="n30_j2nb" font="ui://okk438l4w1g5ji" fontSize="55" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#333333" text="&quot;Archery Game&quot; is a Roguelite strategy game. Enemies spawn over time and try to kill you. You must avoid them and kill them, but your character can only attack while standing. The goal of the game is to survive as long as possible; the best score is recorded. You take damage if you collide with enemies. If you take enough damage, the game ends. The game gets progressively more difficult and different types of enemies appear. But don&apos;t worry, if you kill enough enemies, you can level up. So choosing upgrades wisely is crucial&#xA;Have fun!">
+      <gearDisplay controller="Manager" pages="3"/>
+    </text>
+    <component id="n28_j2nb" name="GBack Button" src="bzjsjd" fileName="Main Menu/How To Play/General/Back Button.xml" xy="15,15" size="400,100" group="n30_j2nb">
+      <gearDisplay controller="Manager" pages="3"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <group id="n30_j2nb" name="General" xy="15,15" size="1805,1065" advanced="true">
+      <gearDisplay controller="Manager" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n33_j2nb" name="Details Header" xy="650,50" size="600,100" group="n34_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="DETAILS">
+      <gearDisplay controller="Manager" pages="4"/>
+    </text>
+    <component id="n32_j2nb" name="DBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n35_j2nb" name="Enemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="ENEMIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n36_j2nb" name="Stats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="STATS" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n37_j2nb" name="Abilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="ABILITIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n38_j2nb" name="Levels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n34_j2nb">
+      <gearDisplay controller="Manager" pages="4"/>
+      <Button title="LEVELS" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <group id="n34_j2nb" name="Details" xy="15,15" size="1860,285" advanced="true">
+      <gearDisplay controller="Manager" pages="4"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n40_j2nb" name="Enemies Header" xy="650,50" size="600,100" group="n46_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="ENEMIES">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+    </text>
+    <component id="n41_j2nb" name="EDBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n42_j2nb" name="EEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+      <Button title="ENEMIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n43_j2nb" name="EStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+      <Button title="STATS" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n44_j2nb" name="EAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+      <Button title="ABILITIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n45_j2nb" name="ELevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n46_j2nb">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+      <Button title="LEVELS" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <graph id="n69_au6o" name="CBackground" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n73_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="5"/>
+    </graph>
+    <loader id="n70_au6o" name="CIcon" xy="403,617" pivot="0.5,0.5" size="114,115" group="n73_au6o" scale="5,5" url="ui://b8s9nw97au6ojj" autoSize="true">
+      <gearDisplay controller="Manager" pages="5"/>
+    </loader>
+    <richtext id="n71_au6o" name="CHeader" xy="775,400" pivot="0.5,0.5" size="950,94" group="n73_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="BASIC-DROID">
+      <gearDisplay controller="Manager" pages="5"/>
+    </richtext>
+    <richtext id="n72_au6o" name="CDescription" xy="775,525" pivot="0.5,0.5" size="950,425" group="n73_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="BASIC-DROID is like an annoying little fly that pops up everywhere. This little fly will relentlessly chase you from the beginning to the end of the game and deal damage on collision.&#xA;HP: 50, DMG: 50, SPD: 3, EXP: 1x">
+      <gearDisplay controller="Manager" pages="5"/>
+    </richtext>
+    <component id="n77_au6o" name="Next Button" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n73_au6o">
+      <gearDisplay controller="Manager" pages="5"/>
+      <Button controller="Manager" page="9"/>
+    </component>
+    <group id="n73_au6o" name="Card1" xy="160,375" size="1751,600" group="n46_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="5"/>
+    </group>
+    <graph id="n79_au6o" name="CBackground2" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n85_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="9"/>
+    </graph>
+    <loader id="n80_au6o" name="CIcon2" xy="404,618" pivot="0.5,0.5" size="112,114" group="n85_au6o" scale="5,5" url="ui://b8s9nw97au6ojk" autoSize="true">
+      <gearDisplay controller="Manager" pages="9"/>
+    </loader>
+    <richtext id="n81_au6o" name="CHeader2" xy="775,400" pivot="0.5,0.5" size="950,94" group="n85_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="ELITE-DROID">
+      <gearDisplay controller="Manager" pages="9"/>
+    </richtext>
+    <richtext id="n82_au6o" name="CDescription2" xy="775,525" pivot="0.5,0.5" size="950,425" group="n85_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="ELITE-DROID is a somewhat annoying type that appears much less frequently than BASIC-DROID. There&apos;s a chance it will appear every second, and this chance increases as time progresses. Of course, its terrifying appearance also makes it somewhat sluggish.&#xA;HP: 150, DMG: 75, SPD: 2.25, EXP: 5x">
+      <gearDisplay controller="Manager" pages="9"/>
+    </richtext>
+    <component id="n83_au6o" name="Previous Button2" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n85_au6o">
+      <gearDisplay controller="Manager" pages="9"/>
+      <Button controller="Manager" page="5"/>
+    </component>
+    <component id="n84_au6o" name="Next Button2" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n85_au6o">
+      <gearDisplay controller="Manager" pages="9"/>
+      <Button controller="Manager" page="11"/>
+    </component>
+    <group id="n85_au6o" name="Card2" xy="10,375" size="1901,600" group="n46_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="9"/>
+    </group>
+    <graph id="n86_au6o" name="CBackground3" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n92_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="11"/>
+    </graph>
+    <loader id="n87_au6o" name="CIcon3" xy="403,619" pivot="0.5,0.5" size="113,111" group="n92_au6o" scale="5,5" url="ui://b8s9nw97au6ojl" autoSize="true">
+      <gearDisplay controller="Manager" pages="11"/>
+    </loader>
+    <richtext id="n88_au6o" name="CHeader3" xy="775,400" pivot="0.5,0.5" size="950,94" group="n92_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="BOSS-DROID">
+      <gearDisplay controller="Manager" pages="11"/>
+    </richtext>
+    <richtext id="n89_au6o" name="CDescription3" xy="775,525" pivot="0.5,0.5" size="950,425" group="n92_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="BOSS-DROID is by far the most terrifying of all DROID&apos;s. Aside from its enormous size, its overwhelming power makes it a fearsome figure. But don&apos;t worry. After all, BOSS-DROID can only appear once every 5 minutes (300 seconds). A friendly reminder: If you&apos;re unlucky, you might encounter 2, or even more...&#xA;HP: 500, DMG: 150, SPD: 1.75, EXP: 50x">
+      <gearDisplay controller="Manager" pages="11"/>
+    </richtext>
+    <component id="n90_au6o" name="Previous Button3" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n92_au6o">
+      <gearDisplay controller="Manager" pages="11"/>
+      <Button controller="Manager" page="9"/>
+    </component>
+    <group id="n92_au6o" name="Card3" xy="10,375" size="1750,600" group="n46_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="11"/>
+    </group>
+    <group id="n46_j2nb" name="Enemies" xy="10,15" size="1901,960" advanced="true">
+      <gearDisplay controller="Manager" pages="5,9,11"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n47_j2nb" name="Stats Header" xy="650,50" size="600,100" group="n53_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="STATS">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+    </text>
+    <component id="n48_j2nb" name="SDBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n49_j2nb" name="SEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+      <Button title="ENEMIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n50_j2nb" name="SStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+      <Button title="STATS" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n51_j2nb" name="SAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+      <Button title="ABILITIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n52_j2nb" name="SLevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n53_j2nb">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+      <Button title="LEVELS" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <graph id="n93_au6o" name="CBackground4" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n99_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="6"/>
+    </graph>
+    <loader id="n94_au6o" name="CIcon4" xy="452,667" pivot="0.5,0.5" size="16,16" group="n99_au6o" scale="35,35" url="ui://b8s9nw97j2nb6a" autoSize="true" color="#33ff00">
+      <gearDisplay controller="Manager" pages="6"/>
+    </loader>
+    <richtext id="n95_au6o" name="CHeader4" xy="775,400" pivot="0.5,0.5" size="950,94" group="n99_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="HEALTH">
+      <gearDisplay controller="Manager" pages="6"/>
+    </richtext>
+    <richtext id="n96_au6o" name="CDescription4" xy="775,525" pivot="0.5,0.5" size="950,425" group="n99_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Health is a unit that represents a character&apos;s health. At the start of the game, health is 100. Health upgrades increase health by 25. Additionally, each level gained restores all health.">
+      <gearDisplay controller="Manager" pages="6"/>
+    </richtext>
+    <component id="n98_au6o" name="Next Button4" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n99_au6o">
+      <gearDisplay controller="Manager" pages="6"/>
+      <Button controller="Manager" page="10"/>
+    </component>
+    <group id="n99_au6o" name="Card4" xy="160,375" size="1751,600" group="n53_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="6"/>
+    </group>
+    <graph id="n100_au6o" name="CBackground5" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n106_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="10"/>
+    </graph>
+    <loader id="n101_au6o" name="CIcon5" xy="452,667" pivot="0.5,0.5" size="16,16" group="n106_au6o" scale="35,35" url="ui://b8s9nw97j2nb6n" autoSize="true" color="#ffff33">
+      <gearDisplay controller="Manager" pages="10"/>
+    </loader>
+    <richtext id="n102_au6o" name="CHeader5" xy="775,400" pivot="0.5,0.5" size="950,94" group="n106_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="ATTACK SPEED">
+      <gearDisplay controller="Manager" pages="10"/>
+    </richtext>
+    <richtext id="n103_au6o" name="CDescription5" xy="775,525" pivot="0.5,0.5" size="950,425" group="n106_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Attack Speed ​​is a value that indicates how fast a character fires arrows. At the start of the game, Attack Speed is 1. Each Attack Speed ​​upgrade increases the Attack Speed ​​value by 20%.">
+      <gearDisplay controller="Manager" pages="10"/>
+    </richtext>
+    <component id="n104_au6o" name="Previous Button5" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n106_au6o">
+      <gearDisplay controller="Manager" pages="10"/>
+      <Button controller="Manager" page="6"/>
+    </component>
+    <component id="n105_au6o" name="Next Button5" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n106_au6o">
+      <gearDisplay controller="Manager" pages="10"/>
+      <Button controller="Manager" page="12"/>
+    </component>
+    <group id="n106_au6o" name="Card5" xy="10,375" size="1901,600" group="n53_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="10"/>
+    </group>
+    <graph id="n107_au6o" name="CBackground6" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n113_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="12"/>
+    </graph>
+    <loader id="n108_au6o" name="CIcon6" xy="452,667" pivot="0.5,0.5" size="16,16" group="n113_au6o" scale="35,35" url="ui://b8s9nw97j2nb9k" autoSize="true" color="#33ccff">
+      <gearDisplay controller="Manager" pages="12"/>
+    </loader>
+    <richtext id="n109_au6o" name="CHeader6" xy="775,400" pivot="0.5,0.5" size="950,94" group="n113_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="MOVEMENT SPEED">
+      <gearDisplay controller="Manager" pages="12"/>
+    </richtext>
+    <richtext id="n110_au6o" name="CDescription6" xy="775,525" pivot="0.5,0.5" size="950,425" group="n113_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Movement Speed ​​is a value that indicates how fast a character moves. At the start of the game, movement speed is 6. Each Movement Speed ​​upgrade increases the Movement Speed ​​value by 2.">
+      <gearDisplay controller="Manager" pages="12"/>
+    </richtext>
+    <component id="n111_au6o" name="Previous Button6" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n113_au6o">
+      <gearDisplay controller="Manager" pages="12"/>
+      <Button controller="Manager" page="10"/>
+    </component>
+    <component id="n112_au6o" name="Next Button6" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n113_au6o">
+      <gearDisplay controller="Manager" pages="12"/>
+      <Button controller="Manager" page="13"/>
+    </component>
+    <group id="n113_au6o" name="Card6" xy="10,375" size="1901,600" group="n53_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="12"/>
+    </group>
+    <graph id="n114_au6o" name="CBackground7" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n120_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="13"/>
+    </graph>
+    <loader id="n115_au6o" name="CIcon7" xy="452,667" pivot="0.5,0.5" size="16,16" group="n120_au6o" scale="35,35" url="ui://b8s9nw97j2nb5w" autoSize="true" color="#ff3333">
+      <gearDisplay controller="Manager" pages="13"/>
+    </loader>
+    <richtext id="n116_au6o" name="CHeader7" xy="775,400" pivot="0.5,0.5" size="950,94" group="n120_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="DAMAGE">
+      <gearDisplay controller="Manager" pages="13"/>
+    </richtext>
+    <richtext id="n117_au6o" name="CDescription7" xy="775,525" pivot="0.5,0.5" size="950,425" group="n120_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Damage represents how much damage a character&apos;s arrow deals. At the start of the game, damage is 25. Each damage upgrade increases the damage value by 5.">
+      <gearDisplay controller="Manager" pages="13"/>
+    </richtext>
+    <component id="n118_au6o" name="Previous Button7" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n120_au6o">
+      <gearDisplay controller="Manager" pages="13"/>
+      <Button controller="Manager" page="12"/>
+    </component>
+    <group id="n120_au6o" name="Card7" xy="10,375" size="1750,600" group="n53_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="13"/>
+    </group>
+    <group id="n53_j2nb" name="Stats" xy="10,15" size="1901,960" advanced="true">
+      <gearDisplay controller="Manager" pages="6,10,12,13"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n54_j2nb" name="Abilities Header" xy="650,50" size="600,100" group="n60_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="ABILITIES">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+    </text>
+    <component id="n55_j2nb" name="ADBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n56_j2nb" name="AEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+      <Button title="ENEMIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n57_j2nb" name="AStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+      <Button title="STATS" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n58_j2nb" name="AAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+      <Button title="ABILITIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n59_j2nb" name="ALevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n60_j2nb">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+      <Button title="LEVELS" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <graph id="n127_au6o" name="CBackground8" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n132_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="7"/>
+    </graph>
+    <loader id="n128_au6o" name="CIcon8" xy="284,500" pivot="0.5,0.5" size="350,350" group="n132_au6o" scale="1.5,1.5" url="ui://b8s9nw97fcz1ji" autoSize="true">
+      <gearDisplay controller="Manager" pages="7"/>
+    </loader>
+    <richtext id="n129_au6o" name="CHeader8" xy="775,400" pivot="0.5,0.5" size="950,94" group="n132_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="DASH">
+      <gearDisplay controller="Manager" pages="7"/>
+    </richtext>
+    <richtext id="n130_au6o" name="CDescription8" xy="775,525" pivot="0.5,0.5" size="950,425" group="n132_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Dash is a unique ability that is critically important at every stage of the game. It allows the character to dash in the direction they are walking. The good news is: this dash is proportional to the character&apos;s movement speed.&#xA;CD: 2">
+      <gearDisplay controller="Manager" pages="7"/>
+    </richtext>
+    <component id="n131_au6o" name="Next Button8" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n132_au6o">
+      <gearDisplay controller="Manager" pages="7"/>
+      <Button controller="Manager" page="14"/>
+    </component>
+    <group id="n132_au6o" name="Card8" xy="160,375" size="1751,600" group="n60_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="7"/>
+    </group>
+    <graph id="n133_au6o" name="CBackground9" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n139_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="14"/>
+    </graph>
+    <loader id="n134_au6o" name="CIcon9" xy="204,419" pivot="0.5,0.5" size="512,512" group="n139_au6o" scale="1.1,1.1" url="ui://b8s9nw97j2nbn" autoSize="true">
+      <gearDisplay controller="Manager" pages="14"/>
+    </loader>
+    <richtext id="n135_au6o" name="CHeader9" xy="775,400" pivot="0.5,0.5" size="950,94" group="n139_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="BURN">
+      <gearDisplay controller="Manager" pages="14"/>
+    </richtext>
+    <richtext id="n136_au6o" name="CDescription9" xy="775,525" pivot="0.5,0.5" size="950,425" group="n139_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Burn is a relatively ineffective ability compared to other abilities in the game. Surprisingly, Burn deals damage proportionally to its duration. It deals 1.5 damage in every 0.1 seconds. Particularly effective against ELITE-DROIDS and BOSS-DROIDS, Burn will burn all your dreams. &#xA;CD: 30, DUR: 2">
+      <gearDisplay controller="Manager" pages="14"/>
+    </richtext>
+    <component id="n137_au6o" name="Previous Button9" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n139_au6o">
+      <gearDisplay controller="Manager" pages="14"/>
+      <Button controller="Manager" page="7"/>
+    </component>
+    <component id="n138_au6o" name="Next Button9" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n139_au6o">
+      <gearDisplay controller="Manager" pages="14"/>
+      <Button controller="Manager" page="15"/>
+    </component>
+    <group id="n139_au6o" name="Card9" xy="10,375" size="1901,600" group="n60_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="14"/>
+    </group>
+    <graph id="n140_au6o" name="CBackground10" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n146_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="15"/>
+    </graph>
+    <loader id="n141_au6o" name="CIcon10" xy="204,419" pivot="0.5,0.5" size="512,512" group="n146_au6o" scale="1.1,1.1" url="ui://b8s9nw97j2nbm" autoSize="true">
+      <gearDisplay controller="Manager" pages="15"/>
+    </loader>
+    <richtext id="n142_au6o" name="CHeader10" xy="775,400" pivot="0.5,0.5" size="950,94" group="n146_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="SPEED">
+      <gearDisplay controller="Manager" pages="15"/>
+    </richtext>
+    <richtext id="n143_au6o" name="CDescription10" xy="775,525" pivot="0.5,0.5" size="950,425" group="n146_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Speed ​​is the only ability that will save your life in a prolonged game. Speed ​​increases your attack speed by 20%. This means that the higher your base attack speed, the more effective it will be.&#xA;CD: 35, DUR: 4">
+      <gearDisplay controller="Manager" pages="15"/>
+    </richtext>
+    <component id="n144_au6o" name="Previous Button10" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n146_au6o">
+      <gearDisplay controller="Manager" pages="15"/>
+      <Button controller="Manager" page="14"/>
+    </component>
+    <component id="n145_au6o" name="Next Button10" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n146_au6o">
+      <gearDisplay controller="Manager" pages="15"/>
+      <Button controller="Manager" page="16"/>
+    </component>
+    <group id="n146_au6o" name="Card10" xy="10,375" size="1901,600" group="n60_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="15"/>
+    </group>
+    <graph id="n147_au6o" name="CBackground11" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n153_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="16"/>
+    </graph>
+    <loader id="n148_au6o" name="CIcon11" xy="204,419" pivot="0.5,0.5" size="512,512" group="n153_au6o" scale="1.1,1.1" url="ui://b8s9nw97j2nb8" autoSize="true">
+      <gearDisplay controller="Manager" pages="16"/>
+    </loader>
+    <richtext id="n149_au6o" name="CHeader11" xy="775,400" pivot="0.5,0.5" size="950,94" group="n153_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="RICOCHET">
+      <gearDisplay controller="Manager" pages="16"/>
+    </richtext>
+    <richtext id="n150_au6o" name="CDescription11" xy="775,525" pivot="0.5,0.5" size="950,425" group="n153_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Ricochet, as the name suggests, is an excellent ability that adds a ricochet effect to arrows. The arrows will be directed to the nearest target upon hitting the first enemy. The starting ricochet rate is 1.&#xD;&#xA;CD: 40, DUR: 3">
+      <gearDisplay controller="Manager" pages="16"/>
+    </richtext>
+    <component id="n151_au6o" name="Previous Button11" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n153_au6o">
+      <gearDisplay controller="Manager" pages="16"/>
+      <Button controller="Manager" page="15"/>
+    </component>
+    <component id="n152_au6o" name="Next Button11" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n153_au6o">
+      <gearDisplay controller="Manager" pages="16"/>
+      <Button controller="Manager" page="17"/>
+    </component>
+    <group id="n153_au6o" name="Card11" xy="10,375" size="1901,600" group="n60_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="16"/>
+    </group>
+    <graph id="n154_au6o" name="CBackground12" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n160_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="17"/>
+    </graph>
+    <loader id="n155_au6o" name="CIcon12" xy="204,419" pivot="0.5,0.5" size="512,512" group="n160_au6o" scale="1.1,1.1" url="ui://b8s9nw97j2nbb" autoSize="true">
+      <gearDisplay controller="Manager" pages="17"/>
+    </loader>
+    <richtext id="n156_au6o" name="CHeader12" xy="775,400" pivot="0.5,0.5" size="950,94" group="n160_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="MULTISHOT">
+      <gearDisplay controller="Manager" pages="17"/>
+    </richtext>
+    <richtext id="n157_au6o" name="CDescription12" xy="775,525" pivot="0.5,0.5" size="950,425" group="n160_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Multishot is a fantastic ability that increases the number of arrows you fire. However, this increase also changes the angle of the arrows, firing them in a funnel shape. Each arrow can trigger the same targeting effects. Multishot is powerful, but it becomes broken when combined with other abilities.&#xA;CD: 45, DUR: 3">
+      <gearDisplay controller="Manager" pages="17"/>
+    </richtext>
+    <component id="n158_au6o" name="Previous Button12" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n160_au6o">
+      <gearDisplay controller="Manager" pages="17"/>
+      <Button controller="Manager" page="16"/>
+    </component>
+    <component id="n159_au6o" name="Next Button12" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n160_au6o">
+      <gearDisplay controller="Manager" pages="17"/>
+      <Button controller="Manager" page="18"/>
+    </component>
+    <group id="n160_au6o" name="Card12" xy="10,375" size="1901,600" group="n60_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="17"/>
+    </group>
+    <graph id="n161_au6o" name="CBackground13" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n167_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="18"/>
+    </graph>
+    <loader id="n162_au6o" name="CIcon13" xy="204,419" pivot="0.5,0.5" size="512,512" group="n167_au6o" scale="1.1,1.1" url="ui://b8s9nw97j2nb7" autoSize="true">
+      <gearDisplay controller="Manager" pages="18"/>
+    </loader>
+    <richtext id="n163_au6o" name="CHeader13" xy="775,400" pivot="0.5,0.5" size="950,94" group="n167_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="RAGE">
+      <gearDisplay controller="Manager" pages="18"/>
+    </richtext>
+    <richtext id="n164_au6o" name="CDescription13" xy="775,525" pivot="0.5,0.5" size="950,425" group="n167_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Rage is like a character&apos;s superpower. Rage is an ultimate that activates abilities on its own, without being affected by the cooldown or duration of other abilities. However, it does so at a reduced power level. Each activated ability is at 75% power.&#xA;CD: 60, DUR: 5">
+      <gearDisplay controller="Manager" pages="18"/>
+    </richtext>
+    <component id="n165_au6o" name="Previous Button13" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n167_au6o">
+      <gearDisplay controller="Manager" pages="18"/>
+      <Button controller="Manager" page="17"/>
+    </component>
+    <group id="n167_au6o" name="Card13" xy="10,375" size="1750,600" group="n60_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="18"/>
+    </group>
+    <group id="n60_j2nb" name="Abilities" xy="10,15" size="1901,960" advanced="true">
+      <gearDisplay controller="Manager" pages="7,14,15,16,17,18"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <text id="n61_j2nb" name="Levels Header" xy="650,50" size="600,100" group="n67_j2nb" font="ui://okk438l4w1g5ji" fontSize="75" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="LEVELS">
+      <gearDisplay controller="Manager" pages="8,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36"/>
+    </text>
+    <component id="n62_j2nb" name="LDBack Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="15,15" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36"/>
+      <Button title="BACK" titleColor="#000000" titleFontSize="72" controller="Manager" page="2"/>
+    </component>
+    <component id="n63_j2nb" name="LEnemies Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="35,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8,19,20"/>
+      <Button title="ENEMIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="5"/>
+    </component>
+    <component id="n64_j2nb" name="LStats Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="515,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8,19,20"/>
+      <Button title="STATS" titleColor="#000000" titleFontSize="72" controller="Manager" page="6"/>
+    </component>
+    <component id="n65_j2nb" name="LAbilities Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="995,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8,19,20"/>
+      <Button title="ABILITIES" titleColor="#000000" titleFontSize="72" controller="Manager" page="7"/>
+    </component>
+    <component id="n66_j2nb" name="LLevels Button" src="bzjsjc" fileName="Main Menu/How To Play/Details/Back Button.xml" xy="1475,200" size="400,100" group="n67_j2nb">
+      <gearDisplay controller="Manager" pages="8,19,20"/>
+      <Button title="LEVELS" titleColor="#000000" titleFontSize="72" controller="Manager" page="8"/>
+    </component>
+    <graph id="n168_au6o" name="CBackground14" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n174_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="8"/>
+    </graph>
+    <loader id="n169_au6o" name="CIcon14" xy="452,667" pivot="0.5,0.5" size="16,16" group="n174_au6o" scale="35,35" url="ui://b8s9nw97j2nb9q" autoSize="true" color="#ccff33">
+      <gearDisplay controller="Manager" pages="8"/>
+    </loader>
+    <richtext id="n170_au6o" name="CHeader14" xy="775,400" pivot="0.5,0.5" size="950,94" group="n174_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="EFFECT">
+      <gearDisplay controller="Manager" pages="8"/>
+    </richtext>
+    <richtext id="n171_au6o" name="CDescription14" xy="775,525" pivot="0.5,0.5" size="950,425" group="n174_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Effect is a powerful upgrade option that increases the effects of abilities, and it has a different effect on each ability. In Burn: damage increases by 1. In Speed: speed multiplier increases by 20%. In Ricochet: bounce count increases by 1. In Multishot: arrow count increases by 1. In Rage: reduced power increases by 20%.">
+      <gearDisplay controller="Manager" pages="8"/>
+    </richtext>
+    <component id="n173_au6o" name="Next Button14" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n174_au6o">
+      <gearDisplay controller="Manager" pages="8"/>
+      <Button controller="Manager" page="19"/>
+    </component>
+    <group id="n174_au6o" name="Card14" xy="160,375" size="1751,600" group="n67_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="8"/>
+    </group>
+    <graph id="n175_au6o" name="CBackground15" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n181_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="19"/>
+    </graph>
+    <loader id="n176_au6o" name="CIcon15" xy="452,667" pivot="0.5,0.5" size="16,16" group="n181_au6o" scale="35,35" url="ui://b8s9nw97j2nb6o" autoSize="true" color="#9966ff">
+      <gearDisplay controller="Manager" pages="19"/>
+    </loader>
+    <richtext id="n177_au6o" name="CHeader15" xy="775,400" pivot="0.5,0.5" size="950,94" group="n181_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="COOLDOWN">
+      <gearDisplay controller="Manager" pages="19"/>
+    </richtext>
+    <richtext id="n178_au6o" name="CDescription15" xy="775,525" pivot="0.5,0.5" size="950,425" group="n181_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Cooldown is a super upgrade option that directly affects the cooldown time of abilities. Cooldown reduces the cooldown of the relevant ability by 5% per level.">
+      <gearDisplay controller="Manager" pages="19"/>
+    </richtext>
+    <component id="n179_au6o" name="Previous Button15" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n181_au6o">
+      <gearDisplay controller="Manager" pages="19"/>
+      <Button controller="Manager" page="8"/>
+    </component>
+    <component id="n180_au6o" name="Next Button15" src="au6ojp" fileName="Main Menu/Next Button.xml" xy="1761,600" pivot="0.5,0.5" size="150,150" group="n181_au6o">
+      <gearDisplay controller="Manager" pages="19"/>
+      <Button controller="Manager" page="20"/>
+    </component>
+    <group id="n181_au6o" name="Card15" xy="10,375" size="1901,600" group="n67_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="19"/>
+    </group>
+    <graph id="n182_au6o" name="CBackground16" xy="160,375" pivot="0.5,0.5" size="1600,600" group="n188_au6o" type="rect" fillColor="#fff1f1f1">
+      <gearDisplay controller="Manager" pages="20"/>
+    </graph>
+    <loader id="n183_au6o" name="CIcon15-6" xy="452,667" pivot="0.5,0.5" size="16,16" group="n188_au6o" scale="35,35" url="ui://b8s9nw97j2nb6l" autoSize="true" color="#66ffff">
+      <gearDisplay controller="Manager" pages="20"/>
+    </loader>
+    <richtext id="n184_au6o" name="CHeader16" xy="775,400" pivot="0.5,0.5" size="950,94" group="n188_au6o" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="3" text="DURATION">
+      <gearDisplay controller="Manager" pages="20"/>
+    </richtext>
+    <richtext id="n185_au6o" name="CDescription16" xy="775,525" pivot="0.5,0.5" size="950,425" group="n188_au6o" fontSize="40" color="#333333" align="center" vAlign="middle" autoSize="none" text="Duration is a elegant upgrade option that appears in-game and affects the active duration of abilities, extending their primary power. Duration, increases the duration of the relevant ability by 10%.">
+      <gearDisplay controller="Manager" pages="20"/>
+    </richtext>
+    <component id="n186_au6o" name="Previous Button16" src="au6ojq" fileName="Main Menu/Previous Button.xml" xy="10,600" pivot="0.5,0.5" size="150,150" group="n188_au6o">
+      <gearDisplay controller="Manager" pages="20"/>
+      <Button controller="Manager" page="19"/>
+    </component>
+    <group id="n188_au6o" name="Card16" xy="10,375" size="1750,600" group="n67_j2nb" advanced="true">
+      <gearDisplay controller="Manager" pages="20"/>
+    </group>
+    <group id="n67_j2nb" name="Levels" xy="10,15" size="1901,960" advanced="true">
+      <gearDisplay controller="Manager" pages="8,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+  </displayList>
+  <transition name="Splash" options="6" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Color" target="n0_j2nb" tween="true" startValue="#ffffff" endValue="#ffffff" duration="24"/>
+    <item time="0" type="Color" target="n3_j2nb" tween="true" startValue="#ffff33" endValue="#ffff33" duration="24"/>
+    <item time="0" type="Scale" target="n3_j2nb" tween="true" startValue="1,1" endValue="1.3,1.4" duration="24" repeat="-1" yoyo="true"/>
+    <item time="0" type="XY" target="n3_j2nb" tween="true" startValue="1020,120" endValue="960,95" duration="24" repeat="-1" yoyo="true"/>
+  </transition>
+</component>

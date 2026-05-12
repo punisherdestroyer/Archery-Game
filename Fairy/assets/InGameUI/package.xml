@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="blza8e1t">
+  <resources>
+    <component id="mxew0" name="InGameUI.xml" path="/InGameUI/" exported="true"/>
+    <font id="mxew6" name="ARIAL.TTF" path="/Main Menu/" exported="true" renderMode="" samplePointSize="16"/>
+    <component id="mxew8" name="Pause Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewa" name="Level Bar.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewjn" name="Burn Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewb" name="Attack Speed Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewc" name="Ricochet Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewd" name="Multishot Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewe" name="Rage Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewf" name="Dash Button.xml" path="/InGameUI/" exported="true"/>
+    <component id="mxewg" name="B_DMG.xml" path="/Abilities/Burn/" exported="true"/>
+    <component id="mxewh" name="B_CD.xml" path="/Abilities/Burn/" exported="true"/>
+    <component id="mxewi" name="B_DUR.xml" path="/Abilities/Burn/" exported="true"/>
+    <component id="mxewj" name="S_PWR.xml" path="/Abilities/Attack Speed/" exported="true"/>
+    <component id="mxewk" name="S_CD.xml" path="/Abilities/Attack Speed/" exported="true"/>
+    <component id="mxewl" name="S_DUR.xml" path="/Abilities/Attack Speed/" exported="true"/>
+    <component id="mxewm" name="R_CD.xml" path="/Abilities/Ricochet/" exported="true"/>
+    <component id="mxewn" name="R_DUR.xml" path="/Abilities/Ricochet/" exported="true"/>
+    <component id="mxewo" name="R_PWR.xml" path="/Abilities/Ricochet/" exported="true"/>
+    <component id="mxewp" name="M_CD.xml" path="/Abilities/Multishot/" exported="true"/>
+    <component id="mxewq" name="M_DUR.xml" path="/Abilities/Multishot/" exported="true"/>
+    <component id="mxewr" name="M_PWR.xml" path="/Abilities/Multishot/" exported="true"/>
+    <component id="mxews" name="RG_CD.xml" path="/Abilities/Rage/" exported="true"/>
+    <component id="mxewt" name="RG_DUR.xml" path="/Abilities/Rage/" exported="true"/>
+    <component id="mxewu" name="RG_PWR.xml" path="/Abilities/Rage/" exported="true"/>
+    <component id="mxewv" name="ASPD.xml" path="/Abilities/Stats/" exported="true"/>
+    <component id="mxeww" name="HP.xml" path="/Abilities/Stats/" exported="true"/>
+    <component id="mxewx" name="ATK.xml" path="/Abilities/Stats/" exported="true"/>
+    <component id="mxewy" name="SPD.xml" path="/Abilities/Stats/" exported="true"/>
+    <component id="au6ojo" name="Joystick.xml" path="/InGameUI/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

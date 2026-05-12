@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="ManagerI" exported="true" pages="0,In Game,1,Pause,2,Game Over,3,Upgrade" selected="3"/>
+  <displayList>
+    <component id="n7_mxew" name="Pause Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="25,25" pivot="0.5,0.5" size="450,150" group="n3_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+      <Button title="PAUSE" titleColor="#000000" titleFontSize="72" controller="ManagerI" page="1"/>
+    </component>
+    <text id="n8_mxew" name="IBest Score" xy="475,25" size="450,150" group="n3_mxew" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="BEST: 00:00">
+      <gearDisplay controller="ManagerI" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n9_mxew" name="IScore" xy="25,175" size="450,150" group="n3_mxew" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="00:00">
+      <gearDisplay controller="ManagerI" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n12_mxew" name="Notification" xy="475,224" size="975,150" group="n3_mxew" fontSize="60" align="center" vAlign="middle" autoSize="none" strokeColor="#ff0000" strokeSize="3" singleLine="true" text="ENEMIES&apos; DAMAGE INCREASED!">
+      <gearDisplay controller="ManagerI" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n37_mxew" name="Level Bar" src="mxewa" fileName="InGameUI/Level Bar.xml" xy="1175,25" pivot="0.5,0.5" size="100,10" group="n3_mxew" touchable="false">
+      <gearDisplay controller="ManagerI" pages="0"/>
+      <ProgressBar max="100"/>
+    </component>
+    <graph id="n128_au6o" name="joystick_touch" xy="79,657" pivot="0.5,0.5" size="354,360" group="n3_mxew" visible="false" alpha="0.5" touchable="false" type="eclipse"/>
+    <component id="n127_au6o" name="joystick" src="au6ojo" fileName="InGameUI/Joystick.xml" xy="81,664" pivot="0.5,0.5" size="350,350" group="n3_mxew"/>
+    <graph id="n129_au6o" name="joystick_center" xy="189,782" pivot="0.5,0.5" size="130,128" group="n3_mxew" visible="false" touchable="false" type="eclipse"/>
+    <component id="n13_mxew" name="Ability_0" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1725,485" pivot="0.5,0.5" size="150,150" group="n39_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </component>
+    <component id="n14_mxew" name="Ability_1" src="mxewb" fileName="InGameUI/Attack Speed Button.xml" xy="1524,484" pivot="0.5,0.5" size="150,150" group="n39_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </component>
+    <component id="n15_mxew" name="Ability_2" src="mxewc" fileName="InGameUI/Ricochet Button.xml" xy="1324,485" pivot="0.5,0.5" size="150,150" group="n39_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </component>
+    <component id="n16_mxew" name="Ability_3" src="mxewd" fileName="InGameUI/Multishot Button.xml" xy="1324,685" pivot="0.5,0.5" size="150,150" group="n39_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </component>
+    <component id="n17_mxew" name="Ability_4" src="mxewe" fileName="InGameUI/Rage Button.xml" xy="1324,885" pivot="0.5,0.5" size="150,150" group="n39_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </component>
+    <component id="n18_mxew" name="Dash Button" src="mxewf" fileName="InGameUI/Dash Button.xml" xy="1548,709" pivot="0.5,0.5" size="300,300" group="n39_mxew">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </component>
+    <group id="n39_mxew" name="Abilities" xy="1324,484" size="551,551" group="n3_mxew" advanced="true">
+      <gearDisplay controller="ManagerI" pages="0"/>
+    </group>
+    <group id="n3_mxew" name="In Game" xy="25,25" size="1850,1010" advanced="true">
+      <gearDisplay controller="ManagerI" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <image id="n42_mxew" name="PBackground" src="j2nb0" fileName="Cartoon_green_texture_grass.jpg" pkg="b8s9nw97" xy="0,0" size="1920,1080" group="n36_mxew" alpha="0.6" color="#000000">
+      <gearDisplay controller="ManagerI" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n26_mxew" name="Pause Header" xy="660,150" size="600,150" group="n36_mxew" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="GAME PAUSED!">
+      <gearDisplay controller="ManagerI" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n22_mxew" name="Resume Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="700,350" pivot="0.5,0.5" size="500,150" group="n36_mxew">
+      <gearDisplay controller="ManagerI" pages="1"/>
+      <Button title="RESUME" titleColor="#000000" titleFontSize="72" controller="ManagerI" page="0"/>
+    </component>
+    <component id="n40_mxew" name="Restart Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="700,550" pivot="0.5,0.5" size="500,150" group="n36_mxew">
+      <gearDisplay controller="ManagerI" pages="1"/>
+      <Button title="RESTART" titleColor="#000000" titleFontSize="72" controller="ManagerI" page="0"/>
+    </component>
+    <component id="n41_mxew" name="PMenu Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="700,750" pivot="0.5,0.5" size="500,150" group="n36_mxew">
+      <gearDisplay controller="ManagerI" pages="1"/>
+      <Button title="MENU" titleColor="#000000" titleFontSize="72"/>
+    </component>
+    <group id="n36_mxew" name="Pause" xy="0,0" size="1920,1080" advanced="true">
+      <gearDisplay controller="ManagerI" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <image id="n43_mxew" name="GBackground" src="j2nb0" fileName="Cartoon_green_texture_grass.jpg" pkg="b8s9nw97" xy="0,0" size="1920,1080" group="n48_mxew" alpha="0.6" color="#000000">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n44_mxew" name="Game  Header" xy="660,100" size="600,150" group="n48_mxew" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="GAME OVER!">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n49_mxew" name="GBest Score" xy="700,275" size="500,150" group="n48_mxew" fontSize="60" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="BEST: 00:00">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n50_mxew" name="GScore" xy="700,450" size="500,150" group="n48_mxew" fontSize="60" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="00:00">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n130_au6o" name="GRestart Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="700,625" pivot="0.5,0.5" size="500,150" group="n48_mxew">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <Button title="RESTART" titleColor="#000000" titleFontSize="72"/>
+    </component>
+    <component id="n47_mxew" name="GMenu Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="700,800" pivot="0.5,0.5" size="500,150" group="n48_mxew">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <Button title="MENU" titleColor="#000000" titleFontSize="72"/>
+    </component>
+    <group id="n48_mxew" name="Game Over" xy="0,0" size="1920,1080" advanced="true">
+      <gearDisplay controller="ManagerI" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <image id="n126_fcz1" name="UBackground" src="j2nb0" fileName="Cartoon_green_texture_grass.jpg" pkg="b8s9nw97" xy="0,0" size="1920,1080" group="n66_mxew" alpha="0.6" color="#000000">
+      <gearDisplay controller="ManagerI" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n67_mxew" name="Upgrade Header" xy="522,146" size="900,150" group="n66_mxew" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="CHOOSE AN UPGRADE!">
+      <gearDisplay controller="ManagerI" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n51_mxew" name="Skip Button" src="mxew8" fileName="InGameUI/Pause Button.xml" xy="700,726" pivot="0.5,0.5" size="500,150" group="n66_mxew">
+      <gearDisplay controller="ManagerI" pages="3"/>
+      <Button title="Skip" titleColor="#000000" titleFontSize="72" controller="ManagerI" page="0"/>
+    </component>
+    <component id="n123_fcz1" name="CAbility Placeholder 1" src="mxewc" fileName="InGameUI/Ricochet Button.xml" xy="475,400" pivot="0.5,0.5" size="150,150" group="n65_mxew" visible="false" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n124_fcz1" name="CAbility Placeholder 2" src="mxewb" fileName="InGameUI/Attack Speed Button.xml" xy="875,400" pivot="0.5,0.5" size="150,150" group="n65_mxew" visible="false" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n125_fcz1" name="CAbility Placeholder 3" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1275,400" pivot="0.5,0.5" size="150,150" group="n65_mxew" visible="false" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n61_mxew" name="Ability Placeholder 1" src="mxewc" fileName="InGameUI/Ricochet Button.xml" xy="0,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n60_mxew" name="Ability Placeholder 2" src="mxewb" fileName="InGameUI/Attack Speed Button.xml" xy="150,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n59_mxew" name="Ability Placeholder 3" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="300,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n107_fcz1" name="Ability Placeholder 4" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="450,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n108_fcz1" name="Ability Placeholder 5" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="600,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n109_fcz1" name="Ability Placeholder 6" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="750,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n110_fcz1" name="Ability Placeholder 7" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="900,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n111_fcz1" name="Ability Placeholder 8" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1050,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n112_fcz1" name="Ability Placeholder 9" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1200,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n113_fcz1" name="Ability Placeholder 10" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1350,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n114_fcz1" name="Ability Placeholder 11" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1500,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n115_fcz1" name="Ability Placeholder 12" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1650,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n116_fcz1" name="Ability Placeholder 13" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="1800,1100" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n117_fcz1" name="Ability Placeholder 14" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="0,1250" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n118_fcz1" name="Ability Placeholder 15" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="150,1250" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n119_fcz1" name="Ability Placeholder 16" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="300,1250" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n120_fcz1" name="Ability Placeholder 17" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="450,1250" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n121_fcz1" name="Ability Placeholder 18" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="600,1250" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <component id="n122_fcz1" name="Ability Placeholder 19" src="mxewjn" fileName="InGameUI/Burn Button.xml" xy="750,1250" pivot="0.5,0.5" size="150,150" group="n65_mxew" alpha="0" touchable="false">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </component>
+    <group id="n65_mxew" name="Abilitiy Placeholders" xy="0,400" size="1950,1000" group="n66_mxew" advanced="true">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </group>
+    <group id="n66_mxew" name="Upgrade" xy="0,0" size="1950,1400" advanced="true">
+      <gearDisplay controller="ManagerI" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <component id="n88_mxew" name="HP" src="mxeww" fileName="Abilities/Stats/HP.xml" xy="585,725" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n89_mxew" name="ATK" src="mxewx" fileName="Abilities/Stats/ATK.xml" xy="785,730" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n87_mxew" name="ASPD" src="mxewv" fileName="Abilities/Stats/ASPD.xml" xy="985,730" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n90_mxew" name="SPD" src="mxewy" fileName="Abilities/Stats/SPD.xml" xy="1185,730" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n71_mxew" name="B_DMG" src="mxewg" fileName="Abilities/Burn/B_DMG.xml" xy="475,125" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n72_mxew" name="B_CD" src="mxewh" fileName="Abilities/Burn/B_CD.xml" xy="475,325" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n73_mxew" name="B_DUR" src="mxewi" fileName="Abilities/Burn/B_DUR.xml" xy="475,525" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n74_mxew" name="S_PWR" src="mxewj" fileName="Abilities/Attack Speed/S_PWR.xml" xy="675,125" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n75_mxew" name="S_CD" src="mxewk" fileName="Abilities/Attack Speed/S_CD.xml" xy="675,325" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n76_mxew" name="S_DUR" src="mxewl" fileName="Abilities/Attack Speed/S_DUR.xml" xy="675,525" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n77_mxew" name="R_PWR" src="mxewo" fileName="Abilities/Ricochet/R_PWR.xml" xy="875,125" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n78_mxew" name="R_CD" src="mxewm" fileName="Abilities/Ricochet/R_CD.xml" xy="875,325" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n79_mxew" name="R_DUR" src="mxewn" fileName="Abilities/Ricochet/R_DUR.xml" xy="875,525" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n80_mxew" name="M_PWR" src="mxewr" fileName="Abilities/Multishot/M_PWR.xml" xy="1075,125" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n81_mxew" name="M_CD" src="mxewp" fileName="Abilities/Multishot/M_CD.xml" xy="1075,325" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n82_mxew" name="M_DUR" src="mxewq" fileName="Abilities/Multishot/M_DUR.xml" xy="1075,525" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n83_mxew" name="RG_PWR" src="mxewu" fileName="Abilities/Rage/RG_PWR.xml" xy="1275,125" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n84_mxew" name="RG_CD" src="mxews" fileName="Abilities/Rage/RG_CD.xml" xy="1275,325" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <component id="n85_mxew" name="RG_DUR" src="mxewt" fileName="Abilities/Rage/RG_DUR.xml" xy="1275,525" pivot="0.5,0.5" size="150,150" group="n86_mxew"/>
+    <group id="n86_mxew" name="Upgrade Abilities" xy="475,125" size="950,755" advanced="true">
+      <gearDisplay controller="ManagerI" pages="3"/>
+    </group>
+  </displayList>
+</component>
