@@ -2,6 +2,7 @@
 {
     public static class SplashData
     {
+        // Ana menü ekranında rastgele gösterilecek olan açılış metinlerinin havuzu
         public static readonly string[] SplashTexts = {
             "Error 404", "Splash Text 0", "Splash Text Not Found:D", "Archery, Mastery", "This Is Fine", "The Floor Is Lava",
             "It's Too Dangerous To Go Alone", "Hurry Up!", "New Record Waiting...", "Cap?", "MC Energy!", "Chipi Chipi Chapa Chapa!",

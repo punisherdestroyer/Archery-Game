@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using Unity.UI;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
@@ -76,18 +75,28 @@ public class Player : MonoBehaviour
     private Transform currentTarget;
     private float nextFireTime;
 
+    // Hedef arama sırasında her kare GC oluşmasını engelleyen sabit boyutlu dizi havuzu.
+    private static readonly Collider[] EnemyOverlapBuffer = new Collider[64];
+    
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+    private static readonly int AttackHash = Animator.StringToHash("Attack");
+
     void Start()
     {
+        // Oyuncunun mevcut canı başlangıçta maksimum canına eşitlenir.
         currentHealth = maxHealth;
     
+        // Arayüz yöneticisi aktifse oyuncu için dünya üzerinde konumlanacak bir can barı üretilir.
         if (InGameUIController.Instance != null && InGameUIController.Instance.GetMainView() != null)
         {
             _healthBar = new HealthBarUI("packageInGame", "componentHPBar", transform, InGameUIController.Instance.GetMainView(), 2.5f);
             _healthBar?.UpdateValue(currentHealth, maxHealth);
         }
     
+        // Oyuncunun seviye bilgileri ve nitelik değerleri kontrol edilip senkronize edilir.
         LevelCheck();
 
+        // Dash butonunun altındaki Cooldown Overlay katmanı hiyerarşik olarak bulunup hazırlanır.
         if (dashOverlay != null)
         {
             Transform t = dashOverlay.transform.Find("Cooldown Overlay");
@@ -97,17 +106,20 @@ public class Player : MonoBehaviour
                 if (actualDashOverlayImage != null) actualDashOverlayImage.fillAmount = 0;
             }
         }
-        if (dashText != null) dashText.text = "";
+        if (dashText != null) dashText.text = string.Empty;
     }
 
     void Update()
     {
+        // Oyun bittiyse veya duraklatıldıysa oyuncu mantıksal döngüleri çalıştırılmaz.
         if (GameManager.Instance.IsGameOver || GameManager.Instance.IsPaused) return;
 
+        // Klavye girdileri, hareket motoru ve savaş mekanikleri her kare tetiklenir.
         HandleInput();
         HandleMovement();
         HandleCombat();
 
+        // Dash yeteneğinin bekleme süresi zaman akışına göre azaltılır.
         if (dashCD > 0)
         {
             dashCD -= Time.deltaTime;
@@ -117,6 +129,7 @@ public class Player : MonoBehaviour
             dashCD = 0;
         }
 
+        // Dash butonunun arayüz üzerindeki doluluk oranı ve kalan saniye metni güncellenir.
         if (actualDashOverlayImage != null)
         {
             if (dashCD > 0)
@@ -127,13 +140,14 @@ public class Player : MonoBehaviour
             else
             {
                 actualDashOverlayImage.fillAmount = 0;
-                if (dashText != null) dashText.text = "";
+                if (dashText != null) dashText.text = string.Empty;
             }
         }
     }
 
     void LateUpdate()
     {
+        // Oyuncunun fiziki hareketi bittikten sonra can barının dünyadaki konumu güncellenir.
         if (!GameManager.Instance.IsGameOver && !GameManager.Instance.IsPaused)
         {
             _healthBar?.UpdatePosition();
@@ -145,6 +159,7 @@ public class Player : MonoBehaviour
 
     public void LevelCheck()
     {
+        // Geliştirme seviyelerine göre oyuncunun can, hasar, saldırı hızı ve hareket hızı hesaplanır.
         maxHealth = 100f + (hpLevel * 25f);
         atkDamage = 25f + (atkLevel * 5f);
         attackSpeedMultiplier = 1f + (atkSpeedLevel * 0.2f);
@@ -154,12 +169,14 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
+        // Sayı tuşlarına (1-5) basıldığında ilgili yeteneğin aktifleştirilmesi AbilityManager üzerinden denenir.
         if (Input.GetKeyDown(KeyCode.Alpha1)) AbilityManager.Instance.TryActivateAbility(0); 
         if (Input.GetKeyDown(KeyCode.Alpha2)) AbilityManager.Instance.TryActivateAbility(1); 
         if (Input.GetKeyDown(KeyCode.Alpha3)) AbilityManager.Instance.TryActivateAbility(2); 
         if (Input.GetKeyDown(KeyCode.Alpha4)) AbilityManager.Instance.TryActivateAbility(3); 
         if (Input.GetKeyDown(KeyCode.Alpha5)) AbilityManager.Instance.TryActivateAbility(4); 
         
+        // Space tuşuna basıldığında atılma koşulları uygunsa asenkron Dash süreci başlatılır.
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCD == 0) StartCoroutine(DashRoutine());
     }
 
@@ -170,6 +187,7 @@ public class Player : MonoBehaviour
         
         float dashTime = 0.2f;
 
+        // 0.2 saniye boyunca oyuncu son hareket ettiği yöne doğru yüksek hızda kaydırılır.
         while (dashTime > 0)
         {
             controller.Move(lastMoveDirection * dashSpeed * Time.deltaTime);
@@ -182,6 +200,7 @@ public class Player : MonoBehaviour
 
     public void Dash()
     {
+        // Harici arayüz butonlarından çağrılabilecek güvenli Dash tetikleme fonksiyonu.
         if (!isDashing && dashCD <= 0)
         {
             StartCoroutine(DashRoutine());
@@ -192,6 +211,7 @@ public class Player : MonoBehaviour
     {
         if (isDashing) return;
 
+        // Joystick veya klavye üzerinden gelen hareket girdi yönleri normale çevrilerek okunur.
         if (InGameUIController.Instance != null)
         {
             moveInput = InGameUIController.Instance.GetJoystickAxis();
@@ -209,6 +229,7 @@ public class Player : MonoBehaviour
 
         if (controller != null)
         {
+            // Karakterin havada kalmaması için zemin kontrolüyle beraber yerçekimi ivmesi uygulanır.
             if (controller.isGrounded) verticalVelocity = -0.5f;
             else verticalVelocity += gravity * Time.deltaTime;
 
@@ -218,26 +239,29 @@ public class Player : MonoBehaviour
             controller.Move(velocity * Time.deltaTime);
         }
 
+        // Eğer bir hareket girdisi mevcutsa oyuncunun yüzü o yöne çevrilir ve yürüme animasyonu oynatılır.
         if (move.sqrMagnitude > 0.01f)
         {
             lastMoveDirection = move.normalized;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lastMoveDirection), 15f * Time.deltaTime);
-            if (anim != null) anim.SetFloat("Speed", move.magnitude);
+            if (anim != null) anim.SetFloat(SpeedHash, move.magnitude);
         }
         else
         {
-            if (anim != null) anim.SetFloat("Speed", 0f);
+            if (anim != null) anim.SetFloat(SpeedHash, 0f);
         }
     }
 
     private void HandleCombat()
     {
+        // En yakın düşman taranır, eğer oyuncu duruyorsa ve saldırı hızı süresi dolduysa atış gerçekleştirilir.
         FindTarget();
         if (currentTarget != null && !isMoving() && Time.time >= nextFireTime)
         {
             Vector3 targetPos = currentTarget.position;
             targetPos.y = transform.position.y; 
             
+            // Oyuncunun yüzü ateş etmeden hemen önce hedefe doğru döndürülür.
             Vector3 targetDir = (targetPos - transform.position).normalized;
             Quaternion targetRotation = Quaternion.LookRotation(targetDir);
             transform.rotation = targetRotation * Quaternion.Euler(0, shootRotationOffset, 0);
@@ -249,13 +273,16 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        anim.SetTrigger("Attack");
+        // Saldırı animasyonu tetiklenir.
+        anim.SetTrigger(AttackHash);
         
+        // Aktif yeteneklere göre fırlatılacak ok sayısı ve rage durumundaki hasar çarpanları hesaplanır.
         int count = AbilityManager.Instance.GetArrowCount(); 
         float finalDmg = atkDamage;
 
         if (AbilityManager.Instance.IsRageActive()) finalDmg *= (1.25f + (ragePowerLvl * 0.01f));
 
+        // Hesaplanan ok sayısı kadar, yelpaze şeklinde açıyla ok nesneleri dünyaya getirilir.
         for (int i = 0; i < count; i++)
         {
             float angle = (i - (count - 1) * 0.5f) * 10f;
@@ -267,19 +294,23 @@ public class Player : MonoBehaviour
             Vector3 dir = rot * (targetPos - firePoint.position).normalized;
 
             GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.LookRotation(dir));
-            Arrow script = arrow.GetComponent<Arrow>();
             
-            float bDmg = AbilityManager.Instance.GetBurnDamage();
-            float bDur = AbilityManager.Instance.GetBurnDuration();
-            int rCount = AbilityManager.Instance.GetBounceCount(); 
-            float rLoss = AbilityManager.Instance.GetBounceLoss();
+            if (arrow.TryGetComponent(out Arrow script))
+            {
+                // Okun taşıyacağı yakma hasarı, sekme sayısı ve azalış oranları verilerek ok kurulumu tamamlanır.
+                float bDmg = AbilityManager.Instance.GetBurnDamage();
+                float bDur = AbilityManager.Instance.GetBurnDuration();
+                int rCount = AbilityManager.Instance.GetBounceCount(); 
+                float rLoss = AbilityManager.Instance.GetBounceLoss();
 
-            script.Setup(dir, bDur > 0, bDur, bDmg, rCount, finalDmg, rLoss);
+                script.Setup(dir, bDur > 0, bDur, bDmg, rCount, finalDmg, rLoss);
+            }
         }
     }
 
     private bool isMoving()
     {
+        // Oyuncunun o an hareket edip etmediğini girdi eksenlerinin karekök uzunluğuna bakarak döndürür.
         if (InGameUIController.Instance != null)
         {
             return InGameUIController.Instance.GetJoystickAxis().sqrMagnitude > 0.01f;
@@ -289,18 +320,29 @@ public class Player : MonoBehaviour
 
     private void FindTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        int count = Physics.OverlapSphereNonAlloc(transform.position, detectionRange, EnemyOverlapBuffer);
         float dist = Mathf.Infinity;
         currentTarget = null;
-        foreach (var e in enemies)
+
+        for (int i = 0; i < count; i++)
         {
-            float d = Vector3.Distance(transform.position, e.transform.position);
-            if (d < dist && d < detectionRange) { dist = d; currentTarget = e.transform; }
+            Collider col = EnemyOverlapBuffer[i];
+            if (col.CompareTag("Enemy"))
+            {
+                // Mesafe hesabı için ağır olan Vector3.Distance yerine sqrMagnitude kullanılarak en yakın düşman bulunur.
+                float d = (transform.position - col.transform.position).sqrMagnitude;
+                if (d < dist)
+                {
+                    dist = d;
+                    currentTarget = col.transform;
+                }
+            }
         }
     }
 
     public void TakeDamage(float amount)
     {
+        // Alınan hasar miktarı mevcut candan düşülür, arayüz güncellenir ve can tükendiyse ölüm tetiklenir.
         currentHealth -= amount;
         _healthBar?.UpdateValue(currentHealth, maxHealth);
         if (currentHealth <= 0) Die();
@@ -308,6 +350,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        // Oyuncu öldüğünde üzerindeki can barı imha edilir ve GameManager üzerinden oyun bitiş ekranı açılır.
         if (_healthBar != null)
         {
             _healthBar.Destroy();
@@ -318,12 +361,14 @@ public class Player : MonoBehaviour
 
     public void FullyHeal() 
     { 
+        // Oyuncunun canını tamamen doldurarak arayüzü günceller.
         currentHealth = maxHealth; 
         _healthBar?.UpdateValue(currentHealth, maxHealth); 
     }
 
     void OnDestroy()
     {
+        // Nesne sahneden silinirken can barı belleğinin sızmaması için temizlik yapılır.
         if (_healthBar != null)
         {
             _healthBar.Destroy();

@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Unity.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -30,8 +29,12 @@ public class EnemySpawner : MonoBehaviour
     private float enemyAtkBuff = 0f;
     private float enemySpdBuff = 0f;
 
+    // Her döngüde yeni nesne üretilmesini engelleyerek hafıza yönetimini optimize eden önbelleklenmiş saniye nesnesi.
+    private static readonly WaitForSeconds OneSecondWait = new WaitForSeconds(1f);
+
     void Start()
     {
+        // Zamanlayıcı ve düşman oluşturma döngüleri bağımsız olarak başlatılır.
         StartCoroutine(TimerTick());
         StartCoroutine(SpawnRoutine());
     }
@@ -40,16 +43,19 @@ public class EnemySpawner : MonoBehaviour
     {
         while (!GameManager.Instance.IsGameOver)
         {
-            yield return new WaitForSeconds(1f);
+            yield return OneSecondWait;
             if (GameManager.Instance.IsPaused) continue;
 
+            // Hayatta kalınan toplam süre saniye bazında artırılır.
             elapsedTime++;
 
+            // Her 45 saniyede bir düşmanlara rastgele bir güçlendirme uygulanır.
             if (elapsedTime > 0 && elapsedTime % 45 == 0)
             {
                 ApplyRandomEnemyBuff();
             }
 
+            // Süre ilerledikçe oyun zorluğu, düşman limitleri ve doğma sıklığı dinamik olarak güncellenir.
             eliteSpawnChance = Mathf.Min(25f, 5f + (elapsedTime / 60f));
             maxEnemiesAllowed = 50 + (elapsedTime / 10);
             currentSpawnInterval = Mathf.Max(minSpawnInterval, 2f - (elapsedTime * 0.005f));
@@ -58,6 +64,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void ApplyRandomEnemyBuff()
     {
+        // Can, hasar veya hız özelliklerinden biri rastgele seçilerek kalıcı olarak artırılır.
         int rand = Random.Range(0, 3);
         string msg = "";
 
@@ -70,6 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator ShowBuffText(string message)
     {
+        // Ekrana gelen güçlendirme bildirimi belirli bir süre gösterildikten sonra kaldırılır.
         InGameUIController.Instance?.ShowNotification(message);
         yield return new WaitForSeconds(4f);
     }
@@ -78,10 +86,12 @@ public class EnemySpawner : MonoBehaviour
     {
         while (!GameManager.Instance.IsGameOver)
         {
+            // Oyun duraklatılmadıysa ve haritadaki düşman sayısı limiti aşmadıysa yeni düşman üretilir.
             if (!GameManager.Instance.IsPaused && Enemy.ActiveEnemyCount < maxEnemiesAllowed)
             {
                 SpawnEnemyNearPlayer();
             }
+            // Değişen doğma aralığı süresine göre dinamik olarak beklenir.
             yield return new WaitForSeconds(currentSpawnInterval);
         }
     }
@@ -90,10 +100,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (playerTransform == null) return;
 
+        // Oyuncunun etrafında rastgele bir yönde ve belirlenen mesafe aralığında bir doğum pozisyonu hesaplanır.
         Vector2 randomDir = Random.insideUnitCircle.normalized;
         float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
         Vector3 spawnPos = playerTransform.position + new Vector3(randomDir.x, 0, randomDir.y) * distance;
         
+        // Hesaplanan pozisyonun oyun haritası sınırlarının dışına çıkması engellenir.
         spawnPos.x = Mathf.Clamp(spawnPos.x, minX, maxX);
         spawnPos.z = Mathf.Clamp(spawnPos.z, minZ, maxZ);
         spawnPos.y = 0.5f;
@@ -103,6 +115,7 @@ public class EnemySpawner : MonoBehaviour
         float atkMult = 1f;
         int expMult = 1;
 
+        // Her 5 dakikada bir Boss, aksi durumlarda ise şansa bağlı olarak Elite düşman seçilir.
         if (elapsedTime > 0 && elapsedTime % 300 == 0)
         {
             prefabToSpawn = bossPrefab;
@@ -118,14 +131,19 @@ public class EnemySpawner : MonoBehaviour
             expMult = 5;
         }
         
+        // Seçilen düşman prefabı belirlenen konumda dünyaya getirilir.
         GameObject spawned = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
         int baseExp = 10 + Mathf.FloorToInt(LevelManager.Instance.currentLevel * 1.5f);
         
-        spawned.GetComponent<Enemy>().InitStats(
-            enemyHpBuff + (hpMult - 1f), 
-            enemyAtkBuff + (atkMult - 1f), 
-            enemySpdBuff, 
-            baseExp * expMult
-        );
+        // Dünyaya gelen düşmanın nitelikleri ve vereceği tecrübe puanı ilk değerlerine atanır.
+        if (spawned.TryGetComponent(out Enemy enemyComponent))
+        {
+            enemyComponent.InitStats(
+                enemyHpBuff + (hpMult - 1f), 
+                enemyAtkBuff + (atkMult - 1f), 
+                enemySpdBuff, 
+                baseExp * expMult
+            );
+        }
     }
 }
