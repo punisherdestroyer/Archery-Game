@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="blza8e1t">
+  <resources>
+    <component id="mxew0" name="componentInGame.xml" path="/InGameUI/" exported="true"/>
+    <component id="j7p4jp" name="barInGame.xml" path="/InGameUI/" exported="true"/>
+    <component id="j7p4jq" name="buttonAbility.xml" path="/InGameUI/" exported="true"/>
+    <component id="wc0jjr" name="componentPause.xml" path="/InGameUI/" exported="true"/>
+    <component id="wc0jjs" name="componentGameOver.xml" path="/InGameUI/" exported="true"/>
+    <component id="wc0jjt" name="componentUpgrade.xml" path="/InGameUI/" exported="true"/>
+    <component id="wc0jjv" name="buttonStat.xml" path="/InGameUI/" exported="true"/>
+    <component id="q6lyjw" name="componentHPBar.xml" path="/InGameUI/" exported="true"/>
+    <component id="q6lyjx" name="barHP.xml" path="/InGameUI/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

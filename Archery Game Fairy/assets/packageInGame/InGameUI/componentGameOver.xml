@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n7_wc0j" name="loaderBackground" xy="0,0" size="1920,1080" alpha="0.7" url="ui://b8s9nw97j2nb0" fill="scaleFree" color="#000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <text id="n8_wc0j" name="textHeader" xy="510,60" size="900,145" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="GAME OVER!">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n2_wc0j" name="textBestScore" xy="700,250" size="500,150" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="BEST: 00:00">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n3_wc0j" name="textScore" xy="700,425" size="500,150" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="00:00">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n4_wc0j" name="buttonRestart" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" pkg="okk438l4" xy="700,625" pivot="0.5,0.5" size="500,150" controller="cTitle,1">
+      <Button title="RESTART" titleColor="#000000" titleFontSize="72"/>
+    </component>
+    <component id="n5_wc0j" name="buttonMenu" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" pkg="okk438l4" xy="700,825" pivot="0.5,0.5" size="500,150" controller="cTitle,1">
+      <Button title="MENU" titleColor="#000000" titleFontSize="72"/>
+    </component>
+  </displayList>
+</component>

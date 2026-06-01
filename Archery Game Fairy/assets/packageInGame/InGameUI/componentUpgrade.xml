@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n27_wc0j" name="loaderBackground" xy="0,0" size="1920,1080" alpha="0.7" url="ui://b8s9nw97j2nb0" fill="scaleFree" color="#000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <text id="n28_wc0j" name="textHeader" xy="510,60" size="900,145" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="CHOOSE AN UPGRADE!">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n30_wc0j" name="buttonUpgrade1" src="wc0jjv" fileName="InGameUI/buttonStat.xml" xy="450,375" pivot="0.5,0.5" size="200,200" aspect="true" controller="cType,0,cSize,0,cFontSize,2"/>
+    <component id="n4_wc0j" name="buttonUpgrade2" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="850,375" pivot="0.5,0.5" size="200,200" aspect="true" controller="cAbilityType,4,cUpgradeType,2,cCooldown,1,cTitle,1,cFontSize,0,cHeaderSize,2,cHeader,0,cHeaderOutline,0"/>
+    <component id="n5_wc0j" name="buttonUpgrade3" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1250,375" pivot="0.5,0.5" size="200,200" aspect="true" controller="cAbilityType,3,cUpgradeType,3,cCooldown,1,cTitle,1,cFontSize,0,cHeaderSize,2,cHeader,0,cHeaderOutline,0"/>
+    <component id="n2_wc0j" name="buttonSkip" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" pkg="okk438l4" xy="700,775" pivot="0.5,0.5" size="500,150" controller="cTitle,1">
+      <Button title="SKIP" titleColor="#000000" titleFontSize="72"/>
+    </component>
+  </displayList>
+</component>

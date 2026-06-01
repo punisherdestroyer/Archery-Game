@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,100" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <controller name="cType" exported="true" pages="0,health,1,damage,2,attack speed,3,movement speed" selected="3"/>
+  <controller name="cSize" exported="true" pages="0,health,1,damage,2,attack speed,3,movement speed" selected="3"/>
+  <controller name="cFontSize" exported="true" pages="0,10,1,20,2,30,3,40,4,50" selected="0"/>
+  <displayList>
+    <loader id="n6_wc0j" name="outline" xy="0,0" size="100,100" aspect="true" url="ui://b8s9nw97j2nb6t" align="center" vAlign="middle" fill="scale" color="#00004d">
+      <gearColor controller="cType" pages="0,1,2,3" values="#004e09|#590000|#535300|#00004d" duration="0.15"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </loader>
+    <loader id="n4_wc0j" name="icon" xy="20,16" size="64,64" aspect="true" url="ui://b8s9nw97j2nbew" align="center" vAlign="middle" fill="scale">
+      <gearXY controller="cSize" pages="0,1,2,3" values="13,16|20,16|10,10|20,16"/>
+      <gearSize controller="cSize" pages="0,1,2,3" values="74,74,1,1|64,64,1,1|80,80,1,1|64,64,1,1"/>
+      <gearColor controller="cType" pages="2" values="#ffff66" default="#ffffff" tween="true" duration="0.15"/>
+      <gearIcon controller="cType" pages="0,1,2,3" values="ui://b8s9nw97j2nbdl|ui://b8s9nw97j2nb2c|ui://b8s9nw97j2nb6n|ui://b8s9nw97j2nbew"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <text id="n3_wc0j" name="title" xy="0,0" size="100,100" aspect="true" font="ui://b8s9nw97w1g5ji" fontSize="10" color="#ffffff" align="center" ubb="true" vars="true" autoSize="none" strokeColor="#000000" strokeSize="2" text="MOVE SPEED">
+      <gearText controller="cType" pages="0,1,2,3" values="HEALTH|DAMAGE|ATK SPEED|MOVE SPEED"/>
+      <gearFontSize controller="cFontSize" pages="0,1,2,3,4" values="10|20|30|40|50"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </text>
+    <graph id="n5_wc0j" name="hover" xy="-3,-3" size="106,106" aspect="true" alpha="0" touchable="false" type="eclipse" fillColor="#ff000000">
+      <gearLook controller="button" pages="1,2,3" values="0.5,0,0,0|0.2,0,0,0|0.8,0,0,0" default="0,0,0,0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+  <Button/>
+</component>
