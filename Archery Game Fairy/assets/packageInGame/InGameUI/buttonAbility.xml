@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="100,100" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
-  <controller name="cAbilityType" exported="true" pages="0,dash,1,burn,2,speed,3,ricochet,4,multishot,5,rage" selected="2"/>
+  <controller name="cAbilityType" exported="true" pages="0,dash,1,burn,2,speed,3,ricochet,4,multishot,5,rage" selected="1"/>
   <controller name="cUpgradeType" exported="true" pages="0,none,1,cooldown,2,duration,3,effect" selected="0"/>
   <controller name="cCooldown" exported="true" pages="0,on,1,off" selected="0"/>
   <controller name="cTitle" exported="true" pages="0,on,1,off" selected="0"/>
-  <controller name="cFontSize" exported="true" pages="0,16,1,36,2,72,3,144" selected="1"/>
-  <controller name="cHeaderSize" exported="true" pages="0,10,1,20,2,30,3,40" selected="1"/>
+  <controller name="cFontSize" exported="true" pages="0,16,1,36,2,72,3,144" selected="0"/>
+  <controller name="cHeaderSize" exported="true" pages="0,10,1,20,2,30,3,40" selected="0"/>
   <controller name="cHeader" exported="true" pages="0,on,1,off" selected="0"/>
   <controller name="cHeaderOutline" exported="true" pages="0,on,1,off" selected="0"/>
   <displayList>
-    <loader id="n4_j7p4" name="icon" xy="2,0" size="95,100" aspect="true" url="ui://b8s9nw97j2nbm" align="center" vAlign="middle" fill="scale">
+    <loader id="n4_j7p4" name="icon" xy="2,0" size="95,100" aspect="true" url="ui://b8s9nw97j2nbn" align="center" vAlign="middle" fill="scale">
       <gearColor controller="button" pages="1,2,3" values="#666666|#999999|#333333" default="#ffffff" tween="true" duration="0.15"/>
       <gearIcon controller="cAbilityType" pages="0,1,2,3,4,5" values="ui://b8s9nw97fcz1ji|ui://b8s9nw97j2nbn|ui://b8s9nw97j2nbm|ui://b8s9nw97j2nb8|ui://b8s9nw97j2nbb|ui://b8s9nw97j2nb7"/>
       <relation target="" sidePair="width-width%,height-height%"/>
     </loader>
-    <loader id="n6_j7p4" name="cooldown" xy="2,0" size="95,100" aspect="true" alpha="0.8" touchable="false" url="ui://b8s9nw97j2nbm" align="center" vAlign="middle" fill="scale" color="#333333" fillMethod="radial360">
+    <loader id="n6_j7p4" name="cooldown" xy="2,0" size="95,100" aspect="true" alpha="0.8" touchable="false" url="ui://b8s9nw97j2nbn" align="center" vAlign="middle" fill="scale" color="#333333" fillMethod="radial360">
       <gearIcon controller="cAbilityType" pages="0,1,2,3,4,5" values="ui://b8s9nw97fcz1ji|ui://b8s9nw97j2nbn|ui://b8s9nw97j2nbm|ui://b8s9nw97j2nb8|ui://b8s9nw97j2nbb|ui://b8s9nw97j2nb7"/>
       <gearDisplay2 controller="cCooldown" pages="0" condition="0"/>
       <relation target="" sidePair="width-width%,height-height%"/>
@@ -26,7 +26,7 @@
       <gearDisplay2 controller="cUpgradeType" pages="1,2,3" condition="0"/>
       <relation target="" sidePair="width-width%,height-height%,right-right,bottom-bottom"/>
     </loader>
-    <text id="n3_j7p4" name="title" xy="0,0" size="100,100" aspect="true" font="ui://b8s9nw97w1g5ji" fontSize="36" color="#ffffff" align="center" vAlign="middle" ubb="true" vars="true" autoSize="none" strokeColor="#000000" strokeSize="3" text="00">
+    <text id="n3_j7p4" name="title" xy="0,0" size="100,100" aspect="true" font="ui://b8s9nw97w1g5ji" fontSize="16" color="#ffffff" align="center" vAlign="middle" ubb="true" vars="true" autoSize="none" strokeColor="#000000" strokeSize="3" text="00">
       <gearDisplay2 controller="cTitle" pages="0" condition="0"/>
       <gearFontSize controller="cFontSize" pages="0,1,3" values="16|36|144" default="72"/>
       <relation target="" sidePair="width-width%,height-height%"/>
@@ -38,7 +38,7 @@
       <gearDisplay2 controller="cHeaderOutline" pages="0" condition="0"/>
       <relation target="" sidePair="width-width%,height-height%"/>
     </loader>
-    <text id="n9_wc0j" name="header" xy="-10,-10" size="120,120" aspect="true" font="ui://b8s9nw97w1g5ji" fontSize="20" color="#ffffff" align="center" ubb="true" vars="true" autoSize="none" strokeColor="#000000" strokeSize="3" text="SPEED">
+    <text id="n9_wc0j" name="header" xy="-10,-10" size="120,120" aspect="true" font="ui://b8s9nw97w1g5ji" fontSize="10" color="#ffffff" align="center" ubb="true" vars="true" autoSize="none" strokeColor="#000000" strokeSize="3" text="BURN">
       <gearText controller="cAbilityType" pages="0,1,2,3,4,5" values="DASH|BURN|SPEED|RICOCHET|MULTISHOT|RAGE"/>
       <gearDisplay2 controller="cHeader" pages="0" condition="0"/>
       <gearFontSize controller="cHeaderSize" pages="0,1,2,3" values="10|20|30|40"/>

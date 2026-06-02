@@ -374,10 +374,10 @@ MonoBehaviour:
   maxSpawnDistance: 25
   minSpawnInterval: 0.3
   eliteSpawnChance: 5
-  minX: -45
-  maxX: 45
-  minZ: -45
-  maxZ: 45
+  minX: 0
+  maxX: 100
+  minZ: 0
+  maxZ: 100
   elapsedTime: 0
 --- !u!114 &301756418
 MonoBehaviour:

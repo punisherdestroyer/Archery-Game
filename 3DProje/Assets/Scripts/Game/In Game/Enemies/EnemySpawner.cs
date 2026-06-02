@@ -16,10 +16,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float eliteSpawnChance = 5f;
 
     [Header("Borders")]
-    [SerializeField] private float minX = -45f;
-    [SerializeField] private float maxX = 45f;
-    [SerializeField] private float minZ = -45f;
-    [SerializeField] private float maxZ = 45f;
+    [SerializeField] private float minX = 1f;
+    [SerializeField] private float maxX = 99f;
+    [SerializeField] private float minZ = 1f;
+    [SerializeField] private float maxZ = 99f;
 
     private float currentSpawnInterval = 2f;
     private int maxEnemiesAllowed = 100;
@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
 
             // Süre ilerledikçe oyun zorluğu, düşman limitleri ve doğma sıklığı dinamik olarak güncellenir.
             eliteSpawnChance = Mathf.Min(25f, 5f + (elapsedTime / 60f));
-            maxEnemiesAllowed = 50 + (elapsedTime / 10);
+            maxEnemiesAllowed = 100 + (elapsedTime / 10);
             currentSpawnInterval = Mathf.Max(minSpawnInterval, 2f - (elapsedTime * 0.005f));
         }
     }
@@ -89,10 +89,19 @@ public class EnemySpawner : MonoBehaviour
             // Oyun duraklatılmadıysa ve haritadaki düşman sayısı limiti aşmadıysa yeni düşman üretilir.
             if (!GameManager.Instance.IsPaused && Enemy.ActiveEnemyCount < maxEnemiesAllowed)
             {
-                SpawnEnemyNearPlayer();
+                // Çizgisel doğmayı engellemek için her periyotta tek bir düşman yerine küçük bir grup doğuruyoruz.
+                // Oyun zorlaştıkça (interval düştükçe) grup boyutu hafifçe dengelenir.
+                int spawnCount = (currentSpawnInterval <= 0.5f) ? Random.Range(3, 6) : Random.Range(1, 3);
+                
+                // Belirlenen grup miktarı kadar düşmanı tek bir karede (frame) farklı açılara dağıtarak üret.
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    if (Enemy.ActiveEnemyCount >= maxEnemiesAllowed) break;
+                    SpawnEnemyNearPlayer();
+                }
             }
-            // Değişen doğma aralığı süresine göre dinamik olarak beklenir.
-            yield return new WaitForSeconds(currentSpawnInterval);
+            // Grup üretiminden sonra dengeli bir bekleme süresi verilir (performans koruması).
+            yield return new WaitForSeconds(currentSpawnInterval * 2f);
         }
     }
 
@@ -100,10 +109,19 @@ public class EnemySpawner : MonoBehaviour
     {
         if (playerTransform == null) return;
 
-        // Oyuncunun etrafında rastgele bir yönde ve belirlenen mesafe aralığında bir doğum pozisyonu hesaplanır.
-        Vector2 randomDir = Random.insideUnitCircle.normalized;
+        // Çizgisel yığılmayı önlemek için 0-360 derece arası tamamen kaotik bir açı seçiliyor.
+        // GetInstanceID ve evrendeki anlık milisaniye tohumu (Seed) harmanlanarak bilgisayarın aynı sayıyı üretmesi engellenir.
+        float seed = Random.value + Time.realtimeSinceStartup;
+        float randomAngle = (seed * Mathf.PI * 2f) % (Mathf.PI * 2f);
+        
+        // Seçilen benzersiz açıya göre trigonometrik yön vektörü oluşturuluyor.
+        Vector3 spawnDirection = new Vector3(Mathf.Cos(randomAngle), 0f, Mathf.Sin(randomAngle));
+        
+        // Rastgele mesafe belirleniyor.
         float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
-        Vector3 spawnPos = playerTransform.position + new Vector3(randomDir.x, 0, randomDir.y) * distance;
+        
+        // Oyuncunun etrafındaki nihai pozisyon hesaplanıyor.
+        Vector3 spawnPos = playerTransform.position + spawnDirection * distance;
         
         // Hesaplanan pozisyonun oyun haritası sınırlarının dışına çıkması engellenir.
         spawnPos.x = Mathf.Clamp(spawnPos.x, minX, maxX);
