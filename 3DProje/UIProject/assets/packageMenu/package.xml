@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="okk438l4">
+  <resources>
+    <component id="bzjsj6" name="componentMainMenu.xml" path="/Main Menu/" exported="true"/>
+    <component id="bzjsj7" name="buttonMenu.xml" path="/Main Menu/" exported="true"/>
+    <component id="au6ojp" name="buttonDetails.xml" path="/How To Play/Details/" exported="true"/>
+    <component id="j7p4jr" name="componentSettings.xml" path="/Settings/" exported="true"/>
+    <component id="j7p4ju" name="sliderVoice_grip.xml" path="/Settings/" exported="true"/>
+    <component id="j7p4jv" name="sliderVoice.xml" path="/Settings/" exported="true"/>
+    <component id="j7p4jw" name="componentHTP.xml" path="/How To Play/" exported="true"/>
+    <component id="j7p4jx" name="componentGeneral.xml" path="/How To Play/" exported="true"/>
+    <component id="j7p4jy" name="componentDetails.xml" path="/How To Play/Details/" exported="true"/>
+    <component id="j7p4jz" name="componentCard.xml" path="/How To Play/Details/" exported="true"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

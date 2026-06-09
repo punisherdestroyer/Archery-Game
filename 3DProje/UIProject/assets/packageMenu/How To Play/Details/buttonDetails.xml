@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="250,290" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <controller name="cType" exported="true" pages="0,next,1,previous" selected="0"/>
+  <displayList>
+    <loader id="n4_mxew" name="type" xy="0,0" pivot="0.5,0.5" size="250,290" touchable="false" url="ui://b8s9nw97j2nb8s" align="center" vAlign="middle" fill="scale" color="#99ff00">
+      <gearXY controller="cType" pages="0,1" values="0,0|0,0"/>
+      <gearLook controller="cType" pages="1" values="1,180,0,0" default="1,0,0,0"/>
+      <gearColor controller="cType" pages="1" values="#ff0000" default="#99ff00"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+  </displayList>
+  <Button/>
+</component>

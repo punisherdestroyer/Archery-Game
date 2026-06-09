@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n0_j7p4" name="loaderBackground" xy="0,0" size="1920,1080" url="ui://b8s9nw97j2nb0" fill="scaleFree" color="#00d900">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <text id="n6_j7p4" name="textHeader" xy="510,60" size="900,145" font="ui://b8s9nw97w1g5ji" fontSize="82" color="#ffffff" align="center" vAlign="middle" ubb="true" vars="true" autoSize="none" strokeColor="#000000" strokeSize="2" text="HOW TO PLAY"/>
+    <component id="n7_j7p4" name="buttonBack" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" xy="25,25" pivot="0.5,0.5" size="450,125" controller="cTitle,1">
+      <Button title="BACK" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <component id="n8_j7p4" name="buttonGeneral" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" xy="300,700" pivot="0.5,0.5" size="500,150" controller="cTitle,1">
+      <Button title="GENERAL" titleColor="#000000" titleFontSize="72"/>
+    </component>
+    <component id="n9_j7p4" name="buttonDetails" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" xy="1120,700" pivot="0.5,0.5" size="500,150" controller="cTitle,1">
+      <Button title="DETAILS" titleColor="#000000" titleFontSize="72"/>
+    </component>
+  </displayList>
+</component>

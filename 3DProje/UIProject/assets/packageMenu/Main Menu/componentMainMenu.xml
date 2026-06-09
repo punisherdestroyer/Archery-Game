@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false" designImageAlpha="90" designImageForTest="true" bgColor="#00ff00" remark="&#xA;">
+  <displayList>
+    <loader id="n68_bzjs" name="loaderBackground" xy="0,0" size="1920,1080" url="ui://b8s9nw97j2nb0" fill="scaleFree" color="#00ff00">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <text id="n0_j2nb" name="textHeader" xy="510,60" pivot="0.5,0.5" size="900,145" font="ui://b8s9nw97w1g5ji" fontSize="100" color="#ffffff" align="center" vAlign="middle" ubb="true" vars="true" autoSize="none" strokeColor="#ffff00" text="ARCHERY GAME">
+      <relation target="" sidePair="center-center%,top-top%"/>
+    </text>
+    <text id="n3_j2nb" name="textSplash" xy="1021,120" size="450,150" skew="-10,-10" font="ui://b8s9nw97w1g5ji" fontSize="40" color="#ffff00" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" text="Splash Text 0"/>
+    <component id="n189_j7p4" name="buttonSettings" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" xy="126,700" size="450,125" controller="cTitle,1">
+      <Button title="SETTINGS" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <component id="n12_j2nb" name="buttonPlay" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" xy="726,700" size="450,125" controller="cTitle,1">
+      <Button title="PLAY" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <component id="n190_j7p4" name="buttonHTP" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" xy="1346,700" size="450,125" controller="cTitle,1">
+      <Button title="HOW TO PLAY" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <text id="n15_j2nb" name="textVersion" xy="0,0" size="192,86" font="ui://b8s9nw97w1g5ji" fontSize="50" color="#ffff00" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="V1.6.0">
+      <relation target="" sidePair="left-left%,top-top%"/>
+    </text>
+    <text id="n16_j2nb" name="textAuthor" xy="1690,1000" size="230,80" font="ui://b8s9nw97w1g5ji" fontSize="50" color="#ffff00" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" text="By Nezu">
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
+    </text>
+  </displayList>
+  <transition name="Splash" options="6" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n3_j2nb" tween="true" startValue="1,1" endValue="1.3,1.4" duration="24" repeat="-1" yoyo="true"/>
+    <item time="0" type="XY" target="n3_j2nb" tween="true" startValue="1020,120" endValue="960,95" duration="24" repeat="-1" yoyo="true"/>
+  </transition>
+</component>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <list id="n144_q6ly" name="listHPPool" xy="0,0" pivot="0.5,0.5" size="1920,1080" touchable="false" overflow="scroll"/>
+    <component id="n131_j7p4" name="buttonPause" src="bzjsj7" fileName="Main Menu/buttonMenu.xml" pkg="okk438l4" xy="25,25" pivot="0.5,0.5" size="450,150" controller="cTitle,1">
+      <Button title="PAUSE" titleColor="#000000" titleFontSize="72"/>
+    </component>
+    <text id="n8_mxew" name="textBestScore" xy="475,25" size="450,150" font="ui://b8s9nw97w1g5ji" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="BEST: 00:00">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n9_mxew" name="textScore" xy="25,175" size="450,150" font="ui://b8s9nw97w1g5ji" fontSize="72" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" strokeSize="2" singleLine="true" text="00:00">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n12_mxew" name="textNotification" xy="475,224" size="975,150" font="ui://b8s9nw97w1g5ji" fontSize="60" align="center" vAlign="middle" autoSize="none" strokeColor="#ff0000" strokeSize="3" singleLine="true" text="ENEMIES&apos; DAMAGE INCREASED!">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n132_j7p4" name="barLevel" src="j7p4jp" fileName="InGameUI/barInGame.xml" xy="1295,25" pivot="0.5,0.5" size="600,60">
+      <ProgressBar max="100"/>
+    </component>
+    <graph id="n129_au6o" name="joystick_center" xy="190,775" size="130,130" aspect="true" visible="false" touchable="false" type="eclipse"/>
+    <loader id="n143_wc0j" name="joystick_thumb" xy="255,840" pivot="0.5,0.5" anchor="true" size="130,130" aspect="true" touchable="false" url="ui://b8s9nw97bzjsjh" fill="scale"/>
+    <loader id="n142_wc0j" name="joystick_outline" xy="254,835" pivot="0.5,0.5" anchor="true" size="350,350" aspect="true" touchable="false" url="ui://b8s9nw97bzjsj2" fill="scale"/>
+    <graph id="n128_au6o" name="joystick_touch" xy="255,835" pivot="0.5,0.5" anchor="true" size="350,350" aspect="true" alpha="0.5" type="eclipse"/>
+    <component id="n135_wc0j" name="buttonDash" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1570,745" pivot="0.5,0.5" size="300,300" group="n39_mxew" aspect="true" controller="cAbilityType,0,cCooldown,0,cTitle,0,cFontSize,2,cHeaderSize,3,cHeader,1,cHeaderOutline,1"/>
+    <component id="n136_wc0j" name="buttonAbility0" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1725,550" pivot="0.5,0.5" size="150,150" group="n39_mxew" aspect="true" controller="cAbilityType,1,cCooldown,0,cTitle,0,cFontSize,2,cHeaderSize,1"/>
+    <component id="n137_wc0j" name="buttonAbility1" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1550,550" pivot="0.5,0.5" size="150,150" group="n39_mxew" aspect="true" controller="cAbilityType,2,cCooldown,0,cTitle,0,cFontSize,2,cHeaderSize,1"/>
+    <component id="n138_wc0j" name="buttonAbility2" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1375,550" pivot="0.5,0.5" size="150,150" group="n39_mxew" aspect="true" controller="cAbilityType,3,cCooldown,0,cTitle,0,cFontSize,2,cHeaderSize,1"/>
+    <component id="n139_wc0j" name="buttonAbility3" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1375,725" pivot="0.5,0.5" size="150,150" group="n39_mxew" aspect="true" controller="cAbilityType,4,cCooldown,0,cTitle,0,cFontSize,2,cHeaderSize,1"/>
+    <component id="n140_wc0j" name="buttonAbility4" src="j7p4jq" fileName="InGameUI/buttonAbility.xml" xy="1375,900" pivot="0.5,0.5" size="150,150" group="n39_mxew" aspect="true" controller="cAbilityType,5,cCooldown,0,cTitle,0,cFontSize,2,cHeaderSize,1"/>
+    <group id="n39_mxew" name="Abilities" xy="1375,550" size="500,500" advanced="true"/>
+  </displayList>
+</component>
